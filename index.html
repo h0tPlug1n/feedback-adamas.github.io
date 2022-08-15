@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Feedback System</title>
+    <title>FORCEPS-2022</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
@@ -13,6 +13,12 @@
             --primary: #593C8F;
             --primary-text: white;
             --disabled: gray;
+
+            --success: green;
+            --success-alternative: rgb(199, 251, 199);
+
+            --failed: rgb(243, 38, 38);
+            --failed-alternative: rgb(252, 223, 223);
         }
 
         * {
@@ -42,9 +48,10 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 300;
             text-align: center;
+            font-family: 'Cinzel', serif;
         }
 
         section {
@@ -57,7 +64,7 @@
             flex-direction: column;
         }
 
-        form input + label, form .radio-set + label {
+        form input + label, form .radio-set + label, form textarea + label {
             margin-top: 2rem;
         }
 
@@ -135,6 +142,29 @@
             cursor: pointer;
         }
 
+        .form-status {
+            width: 100%;
+            border: 1px solid;
+            padding: .5em 1em;
+            margin-bottom: 1em;
+        }
+
+        .form-status.success {
+            background-color: var(--success-alternative);
+            color: var(--success);
+            border-color: var(--success);
+        }
+
+        .form-status.failed {
+            background-color: var(--failed-alternative);
+            color: var(--failed);
+            border-color: var(--failed);
+        }
+
+        .hidden {
+            display: none;
+        }
+
         @media only screen and (max-width: 900px) {
             section {
                 margin: 25px 10%;
@@ -157,11 +187,13 @@
     <header>
         <div class="container">
             <h1>Adamas University</h1>
-            <h2>Student Feedback System</h2>
+            <h2>FORCEPS-2022</h2>
         </div>
     </header>
     <section class="main-body">
-        <form method='POST'>
+        <form method='POST' id="main-form">
+            <div class="form-status hidden" id="form-status"></div>
+
             <label for="name"><i>1</i>Name</label>
             <input type="text" name="name">
             
@@ -171,22 +203,92 @@
             <label for="course"><i>3</i>Course</label>
             <input type="text" name="course">
             
-            <label for="key-learn"><i>4</i>Mention Key Learning of the Session</label>
-            <input type="text" name="key-learn">
+            <label for="key-learn"><i>4</i>Mention Key Learning of the Session (100 words)</label>
+            <textarea name="key-learn" maxlength="500" rows="5"></textarea>
             
             <label for="q0"><i>5</i>Rate the session.</label>
-            <div class="radio-set" id="q0"><input type="radio" name="fd_q0" id="fd_q0_op0" value="Poor"><label
-                    for="fd_q0_op0">Poor</label><input type="radio" name="fd_q0" id="fd_q0_op1" value="Fair"><label
-                    for="fd_q0_op1">Fair</label><input type="radio" name="fd_q0" id="fd_q0_op2" value="Good"><label
-                    for="fd_q0_op2">Good</label><input type="radio" name="fd_q0" id="fd_q0_op3" value="Very Good"><label
-                    for="fd_q0_op3">Very Good</label><input type="radio" name="fd_q0" id="fd_q0_op4"
-                    value="Excellent"><label for="fd_q0_op4">Excellent</label>
+            <div class="radio-set" id="q0">
+                <input type="radio" name="fd_q0" id="fd_q0_op0" value=1>
+                <label for="fd_q0_op0">Poor</label>
+                <input type="radio" name="fd_q0" id="fd_q0_op1" value=2>
+                <label for="fd_q0_op1">Fair</label>
+                <input type="radio" name="fd_q0" id="fd_q0_op2" value=3>
+                <label for="fd_q0_op2">Good</label>
+                <input type="radio" name="fd_q0" id="fd_q0_op3" value=4>
+                <label for="fd_q0_op3">Very Good</label>
+                <input type="radio" name="fd_q0" id="fd_q0_op4" value=5>
+                <label for="fd_q0_op4">Excellent</label>
             </div>
             
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" id="submit-btn">
         </form>
     </section>
-    <footer><i>&copy;Made by<br>Indranil Das | Soubhik Kar</i></footer>
+    <footer><i>&copy;Made by<br>Indranil Das | B.Tech. CSE</i></footer>
+
+    <script type="module">
+        // CDN Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js"
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js"
+        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
+ 
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBKHPoGUv_54hgwx_fwlK93AUlCMWaapak",
+            authDomain: "test-5052d.firebaseapp.com",
+            projectId: "test-5052d",
+            storageBucket: "test-5052d.appspot.com",
+            messagingSenderId: "430790125728",
+            appId: "1:430790125728:web:8fad7323b3a31d46a281c5",
+            measurementId: "G-X6K1E66XQR",
+            databaseURL: "https://test-5052d-default-rtdb.asia-southeast1.firebasedatabase.app/"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const database = getDatabase(app);
+        const form  = document.getElementById("main-form");
+        const formStatusViewer = document.getElementById("form-status");
+        const successMsg = "Success: Form Successfully Submitted";
+        const failedMsg = "Failed: Form Submission Failed! Please Try Again";
+
+        function submitForm(name, phNo, course, keyLearn, rating) {
+            // console.log(ref(database, "/" + name + "_" + phNo));
+            set(ref(database, "forceps2022/" + name + "_" + phNo), {
+                Name: name,
+                Phone_Number: phNo,
+                Course: course,
+                Key_Learning: keyLearn,
+                Rating: rating
+            })
+                .then(() =>{
+                    // console.log("Data Saved");
+                    form.elements['name'].value = "";
+                    form.elements['phone-no'].value = "";
+                    form.elements['course'].value = "";
+                    form.elements['key-learn'].value = "";
+                    form.elements['fd_q0'].forEach(element => element.checked = false);
+                    formStatusViewer.classList = "form-status success";
+                    formStatusViewer.innerText = successMsg;
+                })
+                .catch(e => {
+                    formStatusViewer.classList = ["form-status", "failed"];
+                });
+        }
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            console.log(event);
+            console.log(form.elements);
+            submitForm(
+                form.elements['name'].value,
+                form.elements['phone-no'].value,
+                form.elements['course'].value,
+                form.elements['key-learn'].value,
+                form.elements['fd_q0'].value
+            );
+        });
+
+    </script>
 </body>
 
 </html>
