@@ -71,7 +71,7 @@ section h3::after {
   margin: 1em;
 }
 .club .club-logo img {
-  width: 100px;
+  /* width: 100px; */
   height: 100px;
 }
 .club .club-detail {
@@ -79,12 +79,19 @@ section h3::after {
 }
 .club .club-detail .club-name {
   font-family: "Cinzel", sans-serif;
+  font-weight: 400;
   font-size: 1.2em;
+}
+
+.club .club-detail .club-name span {
+  font-size: .8em;
+  display: block;
 }
 .club .club-detail .mentor {
   font-weight: 500;
 }
 .club .club-detail .description {
+  margin-top: 1.5em;
   text-align: justify;
   font-size: 0.75em;
 }
