@@ -3,14 +3,14 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBKHPoGUv_54hgwx_fwlK93AUlCMWaapak",
-    authDomain: "test-5052d.firebaseapp.com",
-    projectId: "test-5052d",
-    storageBucket: "test-5052d.appspot.com",
-    messagingSenderId: "430790125728",
-    appId: "1:430790125728:web:8fad7323b3a31d46a281c5",
-    measurementId: "G-X6K1E66XQR",
-    databaseURL: "https://test-5052d-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    apiKey: "AIzaSyAplxk3WBKH3_q_8vdhSKNTQ2z3QxSNhZU",
+    authDomain: "forceps-f2531.firebaseapp.com",
+    projectId: "forceps-f2531",
+    storageBucket: "forceps-f2531.appspot.com",
+    messagingSenderId: "1019880604118",
+    appId: "1:1019880604118:web:42016b81763b426a032477",
+    measurementId: "G-FSM7GXCT09",
+    databaseURL: "https://forceps-f2531-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -18,16 +18,26 @@ const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const form  = document.getElementById("main-form");
 
-
+const program = form.elements['prog']
+const studentName = form.elements['stu-name']
+const studentEmail = form.elements['stu-email']
+const studentExp = form.elements['stu-exp']
+const studentCourse = form.elements['stu-course']
+const studentProgRating = form.elements['stu-rate']
 
 function submitForm() {
-    //      vDB        vLocation
-    set(ref(database, "/"), {}) // < Data in JSON
-    .then(() => {})
-    .catch(e => {});
+    set(ref(database, "forceps/"+program.value+"/"), {
+        name: studentName.value,
+        email: studentEmail.value,
+        experience: studentExp.value,
+        course: studentCourse.value,
+        rating: studentProgRating.value,
+    })
+    .then(() => {console.log("success")})
+    .catch(e => {console.log(e)});
 }
 
 form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    console.log(event)
+    event.preventDefault()
+    submitForm()
 });
