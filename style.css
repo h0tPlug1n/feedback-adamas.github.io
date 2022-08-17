@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+header {
+  background-color: rgb(0, 76, 190);
+  color: white;
+  padding: 1em 4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-family: "Cinzel", sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+}
+header h2 {
+  font-family: "Cinzel", sans-serif;
+  font-weight: 400;
+  font-size: 1.75em;
+}
+
+footer {
+  background-color: rgb(0, 76, 190);
+  color: white;
+  padding: 1em 4em;
+  text-align: right;
+}
+
+section {
+  padding: 2em 4em;
+  display: flex;
+  flex-direction: column;
+}
+section h3 {
+  position: relative;
+  text-align: center;
+  padding: 0.5em 1em;
+}
+section h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.club {
+  width: 250px;
+  min-height: 350px;
+  padding: 1em;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+.club .club-logo img {
+  width: 100px;
+  height: 100px;
+}
+.club .club-detail {
+  text-align: center;
+}
+.club .club-detail .club-name {
+  font-family: "Cinzel", sans-serif;
+  font-size: 1.2em;
+}
+.club .club-detail .mentor {
+  font-weight: 500;
+}
+.club .club-detail .description {
+  text-align: justify;
+  font-size: 0.75em;
+}
+
+#club-details section {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#welcome h3 {
+  font-size: 1.4em;
+  font-family: "Cinzel", sans-serif;
+}
+#welcome h3::after {
+  display: none;
+}
+
+#feedback-details {
+  align-items: center;
+}
+#feedback-details form {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  width: 100%;
+  max-width: 500px;
+}
+#feedback-details form input, #feedback-details form textarea {
+  border: 1px solid lightgray;
+  outline: none;
+  padding: 0.75em 1.5em;
+  min-height: 1.25em;
+  font-size: 0.8em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#feedback-details form input:focus, #feedback-details form textarea:focus {
+  outline: 2px solid rgb(0, 76, 190);
+}
+#feedback-details form #stu-rating {
+  display: flex;
+}
+#feedback-details form #stu-rating input[type=radio] {
+  display: none;
+}
+#feedback-details form #stu-rating label {
+  cursor: pointer;
+  flex: 1;
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid lightgray;
+}
+#feedback-details form #stu-rating input[type=radio]:checked + label {
+  background-color: rgb(0, 76, 190);
+  border: 1px solid rgb(0, 76, 190);
+  color: white;
+}
+#feedback-details form input[type=submit] {
+  cursor: pointer;
+  margin: 1em 0;
+  border: 1px solid rgb(0, 76, 190);
+  color: rgb(0, 76, 190);
+  background-color: transparent;
+}
+#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active {
+  background-color: rgb(0, 76, 190);
+  color: white;
+}
+#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + #stu-rating {
+  margin-bottom: 1em;
+}
+
+@media only screen and (max-width: 575px) {
+  header {
+    font-size: 12px;
+    flex-direction: column;
+    padding: 1rem 0.25rem;
+  }
+  header h1 {
+    font-size: 2.2em;
+  }
+  footer {
+    padding: 1rem 0.25rem;
+  }
+  section {
+    padding: 2em 0;
+  }
+}/*# sourceMappingURL=style.css.map */
