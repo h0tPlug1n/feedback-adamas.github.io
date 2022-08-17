@@ -1,294 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FORCEPS-2022</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
-
-        :root {
-            --primary: #593C8F;
-            --primary-text: white;
-            --disabled: gray;
-
-            --success: green;
-            --success-alternative: rgb(199, 251, 199);
-
-            --failed: rgb(243, 38, 38);
-            --failed-alternative: rgb(252, 223, 223);
-        }
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        header, footer {
-            color: var(--primary-text);
-            background-color: var(--primary);
-            padding: 10px;
-        }
-
-        footer {
-            text-align: right;
-            /* padding: 10px; */
-            padding: 10px 25%;
-        }
-
-        h1 {
-            font-size: 3rem;
-            text-align: center;
-            font-weight: 500;
-            font-family: 'Cinzel', serif;
-        }
-
-        h2 {
-            font-size: 1.8rem;
-            font-weight: 300;
-            text-align: center;
-            font-family: 'Cinzel', serif;
-        }
-
-        section {
-            margin: 25px 25%;
-            background-color: rgba(255, 255, 255, 0.5);
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        form input + label, form .radio-set + label, form textarea + label {
-            margin-top: 2rem;
-        }
-
-        form label i {
-            display: inline-block;
-            text-align: center;
-            background: var(--primary);
-            color: var(--primary-text);
-            width: 1.5em;
-            height: 1.5em;
-            font-size: 1.2em;
-            font-weight: 500;
-            font-style: normal;
-            margin-right: .5em;
-        }
-
-        .radio-set {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            margin-left: 3em;
-        }
-
-        input, textarea {
-            padding: 5px 10px;
-            border: none;
-            outline: 1px solid var(--disabled);
-        }
-
-        textarea {
-            resize: none;
-        }
-
-        input:focus, textarea:focus {
-            outline: 2px solid var(--primary);
-        }
-
-
-
-        input[type="radio"] { display: none; }
-        input[type="radio"] + label { margin: 0; max-width: 150px; }
-        input[type="radio"] + label::before {
-            display: inline-block;
-            content: '';
-            width: 0.8em;
-            height: 0.8em;
-            border: 1px solid var(--disabled);
-            background-color: transparent;
-            border-radius: 50%;
-            margin-right: 0.5em;
-
-            transition: 150ms ease-in-out background-color;
-        }
-
-        input[type="radio"]:checked + label::before {
-            display: inline-block;
-            content: '';
-            width: 0.8em;
-            height: 0.8em;
-            border: 1px solid var(--primary);
-            background-color: var(--primary);
-            border-radius: 50%;
-            margin-right: 0.5em;
-        }
-
-        input[type="submit"] {
-            margin-top: 2rem;
-            width: 150px;
-            background-color: var(--primary);
-            border: none;
-            outline: none;
-            color: var(--primary-text);
-            font-size: 1.5em;
-            font-weight: 300;
-            cursor: pointer;
-        }
-
-        .form-status {
-            width: 100%;
-            border: 1px solid;
-            padding: .5em 1em;
-            margin-bottom: 1em;
-        }
-
-        .form-status.success {
-            background-color: var(--success-alternative);
-            color: var(--success);
-            border-color: var(--success);
-        }
-
-        .form-status.failed {
-            background-color: var(--failed-alternative);
-            color: var(--failed);
-            border-color: var(--failed);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        @media only screen and (max-width: 900px) {
-            section {
-                margin: 25px 10%;
-            }
-        }
-
-        @media only screen and (max-width: 600px) {
-            html {
-                font-size: 12px;
-            }
-
-            section {
-                margin: 25px 2%;
-            }
-        }
-    </style>
+    <title>FORCEPS 2022</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    
     <header>
-        <div class="container">
-            <h1>Adamas University</h1>
-            <h2>FORCEPS-2022</h2>
-        </div>
+        <h1>Adamas University</h1>
+        <h2>FORCEPS 2022</h2>
     </header>
-    <section class="main-body">
-        <form method='POST' id="main-form">
-            <div class="form-status hidden" id="form-status"></div>
 
-            <label for="name"><i>1</i>Name</label>
-            <input type="text" name="name">
+    <section id="welcome">
+        <h3>Welcome to FORCEPS 2022</h3>
+    </section>
+
+    <section id="club-details">
+        <h3>Club Details</h3>
+        <section>
             
-            <label for="phone-no"><i>2</i>Phone Number</label>
-            <input type="tel" name="phone-no">
-            
-            <label for="course"><i>3</i>Course</label>
-            <input type="text" name="course">
-            
-            <label for="key-learn"><i>4</i>Mention Key Learning of the Session (100 words)</label>
-            <textarea name="key-learn" maxlength="500" rows="5"></textarea>
-            
-            <label for="q0"><i>5</i>Rate the session.</label>
-            <div class="radio-set" id="q0">
-                <input type="radio" name="fd_q0" id="fd_q0_op0" value=1>
-                <label for="fd_q0_op0">Poor</label>
-                <input type="radio" name="fd_q0" id="fd_q0_op1" value=2>
-                <label for="fd_q0_op1">Fair</label>
-                <input type="radio" name="fd_q0" id="fd_q0_op2" value=3>
-                <label for="fd_q0_op2">Good</label>
-                <input type="radio" name="fd_q0" id="fd_q0_op3" value=4>
-                <label for="fd_q0_op3">Very Good</label>
-                <input type="radio" name="fd_q0" id="fd_q0_op4" value=5>
-                <label for="fd_q0_op4">Excellent</label>
+            <!-- Sample of club entry -->
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
             </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+            <div class="club">
+                <div class="club-logo"><img src="https://i.pinimg.com/736x/e9/e2/78/e9e2787d0cb55d570fe1c76843506759.jpg" alt=""></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Club Name</h4>
+                    <h5 class="mentor">John Smith</h5>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum inventore aliquid cum, reiciendis sapiente ipsum incidunt dignissimos eos esse earum soluta eligendi perferendis laudantium deserunt iusto. Cumque exercitationem odit quia tempore quod incidunt! Placeat ipsam ea illo sint voluptatem assumenda architecto dolore praesentium rem temporibus. Iste impedit fugiat molestiae illo.</p>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+    <section id="feedback-details">
+        <h3>Feedback Form</h3>
+        <form method='POST' id="main-form">
+            <label for="prog">Current Program</label>
+            <input type="text" name="prog" id="prog" disabled value="FORCEPS 2022">
+
+            <label for="stu-name">Student Name</label>
+            <input type="text" name="stu-name" id="stu-name" required autocomplete="name">
             
-            <input type="submit" value="Submit" id="submit-btn">
+            <label for="stu-email">Student Email</label>
+            <input type="email" name="stu-email" id="stu-email" required autocomplete="email">
+            
+            <label for="stu-exp">Your Key Learnings</label>
+            <textarea name="stu-exp" id="stu-exp" required autocomplete="off"></textarea>
+            
+            <label for="stu-name">Course Name</label>
+            <input type="text" name="stu-course" id="stu-course" required autocomplete="off">
+
+            <label for="stu-rating">Rate the Sesion</label>
+            <div id="stu-rating">
+                <input type="radio" name="stu-rate" id="stu-rate-1" value="1">
+                <label for="stu-rate-1">1</label>
+                <input type="radio" name="stu-rate" id="stu-rate-2" value="2">
+                <label for="stu-rate-2">2</label>
+                <input type="radio" name="stu-rate" id="stu-rate-3" value="3">
+                <label for="stu-rate-3">3</label>
+                <input type="radio" name="stu-rate" id="stu-rate-4" value="4">
+                <label for="stu-rate-4">4</label>
+                <input type="radio" name="stu-rate" id="stu-rate-5" value="5" checked>
+                <label for="stu-rate-5">5</label>
+            </div>
+
+            <input type="submit" value="Submit">
         </form>
     </section>
-    <footer><i>&copy;Made by<br>Indranil Das | B.Tech. CSE</i></footer>
 
-    <script type="module">
-        // CDN Imports
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js"
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js"
-        import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
- 
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyBKHPoGUv_54hgwx_fwlK93AUlCMWaapak",
-            authDomain: "test-5052d.firebaseapp.com",
-            projectId: "test-5052d",
-            storageBucket: "test-5052d.appspot.com",
-            messagingSenderId: "430790125728",
-            appId: "1:430790125728:web:8fad7323b3a31d46a281c5",
-            measurementId: "G-X6K1E66XQR",
-            databaseURL: "https://test-5052d-default-rtdb.asia-southeast1.firebasedatabase.app/"
-        };
+    <footer>
+        &copy; Adamas University
+    </footer>
 
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const database = getDatabase(app);
-        const form  = document.getElementById("main-form");
-        const formStatusViewer = document.getElementById("form-status");
-        const successMsg = "Success: Form Successfully Submitted";
-        const failedMsg = "Failed: Form Submission Failed! Please Try Again";
-
-        function submitForm(name, phNo, course, keyLearn, rating) {
-            // console.log(ref(database, "/" + name + "_" + phNo));
-            set(ref(database, "forceps2022/" + name + "_" + phNo), {
-                Name: name,
-                Phone_Number: phNo,
-                Course: course,
-                Key_Learning: keyLearn,
-                Rating: rating
-            })
-                .then(() =>{
-                    // console.log("Data Saved");
-                    form.elements['name'].value = "";
-                    form.elements['phone-no'].value = "";
-                    form.elements['course'].value = "";
-                    form.elements['key-learn'].value = "";
-                    form.elements['fd_q0'].forEach(element => element.checked = false);
-                    formStatusViewer.classList = "form-status success";
-                    formStatusViewer.innerText = successMsg;
-                })
-                .catch(e => {
-                    formStatusViewer.classList = ["form-status", "failed"];
-                });
-        }
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            console.log(event);
-            console.log(form.elements);
-            submitForm(
-                form.elements['name'].value,
-                form.elements['phone-no'].value,
-                form.elements['course'].value,
-                form.elements['key-learn'].value,
-                form.elements['fd_q0'].value
-            );
-        });
-
-    </script>
+    <script type="module" src="app.js"></script>
 </body>
-
 </html>
