@@ -16,17 +16,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
-const form  = document.getElementById("main-form");
 
-const program = form.elements['prog']
-const studentName = form.elements['stu-name']
-const studentEmail = form.elements['stu-email']
-const studentExp = form.elements['stu-exp']
-const studentCourse = form.elements['stu-course']
-const studentProgRating = form.elements['stu-rate']
 
-function submitForm() {
-    set(ref(database, "forceps/"+program.value+"/"), {
+const feedbackForm  = document.getElementById("main-form");
+
+const program = feedbackForm.elements['prog']
+const studentName = feedbackForm.elements['stu-name']
+const studentEmail = feedbackForm.elements['stu-email']
+const studentExp = feedbackForm.elements['stu-exp']
+const studentCourse = feedbackForm.elements['stu-course']
+const studentProgRating = feedbackForm.elements['stu-rate']
+
+function submitFeedbackForm() {
+    set(ref(database, "forceps2022/" + program.value + "/"), {
+        submitTime: new Date().toString(),
         name: studentName.value,
         email: studentEmail.value,
         experience: studentExp.value,
@@ -34,10 +37,24 @@ function submitForm() {
         rating: studentProgRating.value,
     })
     .then(() => {console.log("success")})
-    .catch(e => {console.log(e)});
+    .catch(e => {console.error(e)});
 }
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault()
-    submitForm()
+feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    // submitFeedbackForm();
 });
+
+const clubForm = document.getElementById("club-form");
+
+function submitClubForm() {
+    set(ref(database, "forceps2022/" + + "/"), {
+
+    })
+    .then(() => {console.log("success")})
+    .catch(e => {console.error(e)});
+}
+
+clubForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+})
