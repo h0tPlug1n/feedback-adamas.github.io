@@ -13,6 +13,10 @@ textarea {
   resize: none;
 }
 
+.d-none {
+  display: none;
+}
+
 header {
   background-color: rgb(0, 76, 190);
   color: white;
@@ -71,7 +75,6 @@ section h3::after {
   margin: 1em;
 }
 .club .club-logo img {
-  /* width: 100px; */
   height: 100px;
 }
 .club .club-detail {
@@ -79,21 +82,20 @@ section h3::after {
 }
 .club .club-detail .club-name {
   font-family: "Cinzel", sans-serif;
-  font-weight: 400;
   font-size: 1.2em;
+  font-weight: 400;
 }
-
 .club .club-detail .club-name span {
-  font-size: .8em;
+  font-size: 0.8em;
   display: block;
 }
 .club .club-detail .mentor {
   font-weight: 500;
 }
 .club .club-detail .description {
-  margin-top: 1.5em;
   text-align: justify;
   font-size: 0.75em;
+  margin-top: 1em;
 }
 
 #club-details section {
@@ -110,17 +112,17 @@ section h3::after {
   display: none;
 }
 
-#feedback-details {
+#feedback-details, #club-selection-form {
   align-items: center;
 }
-#feedback-details form {
+#feedback-details form, #club-selection-form form {
   display: flex;
   flex-direction: column;
   padding: 1em;
   width: 100%;
   max-width: 500px;
 }
-#feedback-details form input, #feedback-details form textarea {
+#feedback-details form input, #feedback-details form textarea, #feedback-details form select, #club-selection-form form input, #club-selection-form form textarea, #club-selection-form form select {
   border: 1px solid lightgray;
   outline: none;
   padding: 0.75em 1.5em;
@@ -128,40 +130,117 @@ section h3::after {
   font-size: 0.8em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#feedback-details form input:focus, #feedback-details form textarea:focus {
+#feedback-details form input:focus, #feedback-details form textarea:focus, #feedback-details form select:focus, #club-selection-form form input:focus, #club-selection-form form textarea:focus, #club-selection-form form select:focus {
   outline: 2px solid rgb(0, 76, 190);
 }
-#feedback-details form #stu-rating {
+#feedback-details form #stu-rating, #club-selection-form form #stu-rating {
   display: flex;
 }
-#feedback-details form #stu-rating input[type=radio] {
+#feedback-details form #stu-rating input[type=radio], #club-selection-form form #stu-rating input[type=radio] {
   display: none;
 }
-#feedback-details form #stu-rating label {
+#feedback-details form #stu-rating label, #club-selection-form form #stu-rating label {
   cursor: pointer;
   flex: 1;
   text-align: center;
   padding: 0.5em;
   border: 1px solid lightgray;
 }
-#feedback-details form #stu-rating input[type=radio]:checked + label {
+#feedback-details form #stu-rating input[type=radio]:checked + label, #club-selection-form form #stu-rating input[type=radio]:checked + label {
   background-color: rgb(0, 76, 190);
   border: 1px solid rgb(0, 76, 190);
   color: white;
 }
-#feedback-details form input[type=submit] {
+#feedback-details form input[type=submit], #club-selection-form form input[type=submit] {
   cursor: pointer;
   margin: 1em 0;
   border: 1px solid rgb(0, 76, 190);
   color: rgb(0, 76, 190);
   background-color: transparent;
 }
-#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active {
+#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active, #club-selection-form form input[type=submit]:hover, #club-selection-form form input[type=submit]:active {
   background-color: rgb(0, 76, 190);
   color: white;
 }
-#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + #stu-rating {
+#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + #stu-rating, #feedback-details form label + select, #club-selection-form form label + input, #club-selection-form form label + textarea, #club-selection-form form label + #stu-rating, #club-selection-form form label + select {
   margin-bottom: 1em;
+}
+
+#selector {
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0;
+}
+#selector button {
+  width: 100px;
+  padding: 1em 0;
+  border: 1px solid rgb(0, 76, 190);
+  color: rgb(0, 76, 190);
+  background-color: transparent;
+}
+#selector button:hover, #selector button.selected {
+  cursor: pointer;
+  background-color: rgb(0, 76, 190);
+  color: white;
+}
+
+#schedule-details .programs {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#schedule-details .programs .program {
+  position: relative;
+  padding: 1em;
+  width: 275px;
+  border: 1px solid black;
+}
+#schedule-details .programs .program .time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  font-size: 0.8em;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+}
+#schedule-details .programs .program h4 {
+  font-weight: 500;
+  font-size: 1.1em;
+}
+#schedule-details .programs .program h5 {
+  font-weight: 400;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.4);
+}
+#schedule-details .programs .program + .program {
+  margin-top: 1em;
+}
+#schedule-details .programs .program.disabled {
+  border: 1px solid rgb(205, 205, 205);
+}
+#schedule-details .programs .program.disabled .time {
+  background-color: rgb(205, 205, 205);
+  border-color: rgb(205, 205, 205);
+}
+#schedule-details .programs .program.disabled h4, #schedule-details .programs .program.disabled h5 {
+  color: rgb(205, 205, 205);
+}
+#schedule-details .programs .program.current {
+  border: 1px solid rgb(14, 191, 14);
+}
+#schedule-details .programs .program.current .time {
+  background-color: rgb(14, 191, 14);
+  border-color: rgb(14, 191, 14);
+}
+#schedule-details .programs .program.current h4 {
+  color: rgb(14, 191, 14);
+}
+#schedule-details .programs .program.current h5 {
+  color: rgba(14, 191, 14, 0.5);
 }
 
 @media only screen and (max-width: 575px) {
@@ -174,7 +253,7 @@ section h3::after {
     font-size: 2.2em;
   }
   footer {
-    padding: 1rem 0.25rem;
+    padding: 1em;
   }
   section {
     padding: 2em 0;
