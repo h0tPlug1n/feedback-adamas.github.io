@@ -155,10 +155,13 @@
         <h3>Program Schedule</h3>
         <div class="programs" id="programs">
 
+            <div class="program d-none"></div>
+
             <div class="program" hours="9" minutes="30">
                 <div class="time">09:30</div>
                 <h4>Curtain Raiser</h4>
                 <h5>Hon'ble Chancellor and<br>Governing Body Members</h5>
+                
             </div>
 
             <div class="program" hours="9" minutes="45">
@@ -187,6 +190,7 @@
                     Examinations Department,<br>
                     Library, Registrar's Office etc.
                 </h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
 
             <div class="program" hours="11" minutes="30">
@@ -196,10 +200,15 @@
                     Landscaping
                 </h4>
                 <h5>Director, CDC and Outreach</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <!-- Break Time -->
-            <div class="program d-none" hours="12" minutes="30"></div>
+            <div class="program" hours="12" minutes="30">
+                <div class="time">12:30</div>
+                <h4>Break</h4>
+            </div>
 
             <div class="program" hours="13" minutes="30">
                 <div class="time">13:30</div>
@@ -208,7 +217,9 @@
                     to Learning
                 </h4>
                 <h5>Assistant Director,<br>P&M and Head, eLearning</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <div class="program" hours="14" minutes="00">
                 <div class="time">14:00</div>
@@ -217,7 +228,9 @@
                     Lifelong Learning Opportunities
                 </h4>
                 <h5>Pro VC<br>(Training, Placement & Corporate Relations)</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <div class="program" hours="14" minutes="30">
                 <div class="time">14:30</div>
@@ -226,7 +239,9 @@
                     and giving back
                 </h4>
                 <h5>Associate Director - Incubation</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <div class="program" hours="15" minutes="00">
                 <div class="time">15:00</div>
@@ -235,7 +250,9 @@
                     Internationalization @ AU
                 </h4>
                 <h5>Director and<br>Jt. Director, International Relations</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <div class="program" hours="15" minutes="30">
                 <div class="time">15:30</div>
@@ -245,7 +262,9 @@
                     AU Clubs
                 </h4>
                 <h5>Assistant Dean, Student Affairs</h5>
+                <a href="#feedback-details" >Feedback</a>
             </div>
+            
 
             <div class="program d-none" hours="16" minutes="30"></div>
 
@@ -255,32 +274,42 @@
     <section id="feedback-details">
         <h3>Program Feedback</h3>
         <form id="main-form">
+
+            <div class="" id="form-message" name="form-message">
+                <span id="status" name="status">
+                    
+                </span>
+                <span id="message" name="message">
+                    
+                </span>
+            </div>
+
             <label for="prog">Current Program</label>
             <input type="text" name="prog" id="prog" disabled value="FORCEPS 2022">
 
             <label for="stu-name">Student Name</label>
-            <input type="text" name="stu-name" id="stu-name"  autocomplete="name">
+            <input type="text" name="stu-name" id="stu-name" disabled autocomplete="name">
             
             <label for="stu-email">Student Email</label>
-            <input type="email" name="stu-email" id="stu-email"  autocomplete="email">
+            <input type="email" name="stu-email" id="stu-email" disabled autocomplete="email">
             
             <label for="stu-exp">Your Key Learnings</label>
-            <textarea name="stu-exp" id="stu-exp"  autocomplete="off"></textarea>
+            <textarea name="stu-exp" id="stu-exp" disabled autocomplete="off"></textarea>
             
             <label for="stu-name">Course Name</label>
-            <input type="text" name="stu-course" id="stu-course"  autocomplete="off">
+            <input type="text" name="stu-course" id="stu-course" disabled autocomplete="off">
 
             <label for="stu-rating">Rate the Sesion</label>
             <div id="stu-rating">
-                <input type="radio" name="stu-rate" id="stu-rate-1" value="1">
+                <input type="radio" name="stu-rate" id="stu-rate-1" value="1" disabled>
                 <label for="stu-rate-1">1</label>
-                <input type="radio" name="stu-rate" id="stu-rate-2" value="2">
+                <input type="radio" name="stu-rate" id="stu-rate-2" value="2" disabled>
                 <label for="stu-rate-2">2</label>
-                <input type="radio" name="stu-rate" id="stu-rate-3" value="3">
+                <input type="radio" name="stu-rate" id="stu-rate-3" value="3" disabled>
                 <label for="stu-rate-3">3</label>
-                <input type="radio" name="stu-rate" id="stu-rate-4" value="4">
+                <input type="radio" name="stu-rate" id="stu-rate-4" value="4" disabled>
                 <label for="stu-rate-4">4</label>
-                <input type="radio" name="stu-rate" id="stu-rate-5" value="5" checked>
+                <input type="radio" name="stu-rate" id="stu-rate-5" value="5" disabled checked>
                 <label for="stu-rate-5">5</label>
             </div>
 
