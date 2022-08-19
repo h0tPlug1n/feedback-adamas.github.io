@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -122,6 +123,26 @@ section h3::after {
   width: 100%;
   max-width: 500px;
 }
+#feedback-details form #form-message, #club-selection-form form #form-message {
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  display: none;
+}
+#feedback-details form #form-message.success, #club-selection-form form #form-message.success {
+  display: block;
+  color: rgb(0, 142, 14);
+  background-color: rgb(190, 241, 186);
+  border: 1px solid rgb(0, 142, 14);
+}
+#feedback-details form #form-message.failed, #club-selection-form form #form-message.failed {
+  display: block;
+  color: rgb(197, 0, 0);
+  background-color: rgb(255, 202, 202);
+  border: 1px solid rgb(197, 0, 0);
+}
+#feedback-details form #form-message #status, #club-selection-form form #form-message #status {
+  font-weight: 500;
+}
 #feedback-details form input, #feedback-details form textarea, #feedback-details form select, #club-selection-form form input, #club-selection-form form textarea, #club-selection-form form select {
   border: 1px solid lightgray;
   outline: none;
@@ -150,6 +171,11 @@ section h3::after {
   background-color: rgb(0, 76, 190);
   border: 1px solid rgb(0, 76, 190);
   color: white;
+}
+#feedback-details form #stu-rating input[type=radio]:disabled + label, #club-selection-form form #stu-rating input[type=radio]:disabled + label {
+  background-color: rgb(223, 223, 223);
+  color: darkgray;
+  border: none;
 }
 #feedback-details form input[type=submit], #club-selection-form form input[type=submit] {
   cursor: pointer;
@@ -213,8 +239,13 @@ section h3::after {
 }
 #schedule-details .programs .program h5 {
   font-weight: 400;
-  text-align: right;
   color: rgba(0, 0, 0, 0.4);
+}
+#schedule-details .programs .program a {
+  display: none;
+  color: black;
+  text-decoration: none;
+  margin-top: 0.5em;
 }
 #schedule-details .programs .program + .program {
   margin-top: 1em;
@@ -242,8 +273,11 @@ section h3::after {
 #schedule-details .programs .program.current h5 {
   color: rgba(14, 191, 14, 0.5);
 }
+#schedule-details .programs .program.current a {
+  display: block;
+}
 
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 840px) {
   header {
     font-size: 12px;
     flex-direction: column;
