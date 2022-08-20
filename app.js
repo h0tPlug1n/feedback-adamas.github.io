@@ -1,5 +1,4 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js"
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-analytics.js"
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
 
 const firebaseConfig = {
@@ -14,7 +13,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const database = getDatabase(app);
 
 const feedbackForm  = document.getElementById("main-form");
@@ -30,21 +28,17 @@ if (start < currTime && currTime < end) {
     }
 }
 
-
-const program = feedbackForm.elements['prog']
-const studentName = feedbackForm.elements['stu-name']
-const studentEmail = feedbackForm.elements['stu-email']
-const studentExp = feedbackForm.elements['stu-exp']
-const studentCourse = feedbackForm.elements['stu-course']
-const studentProgRating = feedbackForm.elements['stu-rate']
+const program = feedbackForm.elements['prog'];
+const studentProgQuality = feedbackForm.elements['stu-quality'];
+const studentProgExpectations = feedbackForm.elements['stu-expect'];
+const studentProgRating = feedbackForm.elements['stu-rate'];
 
 function submitFeedbackForm() {
     set(ref(database, "forceps2022/" + program.value + "/"), {
+        id: Math.random()*10**15,
         submitTime: new Date().toString(),
-        name: studentName.value,
-        email: studentEmail.value,
-        experience: studentExp.value,
-        course: studentCourse.value,
+        quality: studentProgQuality.value,
+        epxectations: studentProgExpectations.value,
         rating: studentProgRating.value,
     })
     .then(() => {console.log("success");displayFormSuccess();})
@@ -58,10 +52,8 @@ feedbackForm.addEventListener('submit', (event) => {
 
 const feedbackFormMsg = document.getElementById("form-message")
 function displayFormSuccess() {
-    studentName.value = '';
-    studentEmail.value = '';
-    studentExp.value = '';
-    studentCourse.value = '';
+    studentProgExpectations.value = '';
+    studentProgQuality.value = '';
     studentProgRating.value = '';
     
     feedbackFormMsg.classList.add("success");
@@ -77,14 +69,45 @@ function displayFormFailed() {
 
 const clubForm = document.getElementById("club-form");
 
-function submitClubForm() {
-    set(ref(database, "forceps2022/" + + "/"), {
+const clubStuName = clubForm.elements['stu-name'];
+const clubStuEmail = clubForm.elements['stu-email'];
+const clubStuCourse = clubForm.elements['stu-course'];
+const clubChoice_1 = clubForm.elements['club-1'];
+const clubChocie_2 = clubForm.elements['club-2'];
 
+function submitClubForm() {
+    set(ref(database, "forceps2022/clubSelection/"), {
+        id: Math.random()*20,
+        name: clubStuName,
+        email: clubStuEmail,
+        course: clubStuCourse,
+        choice1: clubChoice_1,
+        choice2: clubChocie_2,
     })
-    .then(() => {console.log("success")})
-    .catch(e => {console.error(e)});
+    .then(() => {console.log("success"); clubFormSubmitSuccess();})
+    .catch(e => {console.error(e); clubFormSubmitFailed();});
 }
 
 clubForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    submitClubForm();
 })
+
+const clubFormMsg = document.getElementById("club-form-message")
+function clubFormSubmitSuccess() {
+    clubStuName.value = '';
+    clubStuEmail.value = '';
+    clubStuCourse.value = '';
+    clubChoice_1.value = '';
+    clubChocie_2.value = '';
+
+    clubFormMsg.classList.add("success");
+    clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Success";
+    clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Club Choice Received";
+}
+
+function clubFormSubmitFailed() {
+    clubFormMsg.classList.add("failed");
+    clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
+    clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
+}
