@@ -28,6 +28,24 @@
         <section>
 
             <div class="club">
+                <div class="club-logo"><img src="clubLogo/robotics.jpeg"  alt="Loading..."></div>
+                <div class="club-detail">
+                    <h4 class="club-name">Robotics & AI Club</h4>
+                    <h5 class="mentor">Mrs. Rupanwita Das Mahapatra</h5>
+                    <p class="description">To facilate students to understand, design and learn robotics.</p>
+                </div>
+            </div>
+            
+            <div class="club">
+                <div class="club-logo"><img src="clubLogo/cycoders.png"  alt="Loading..."></div>
+                <div class="club-detail">
+                    <h4 class="club-name">The Cy-Coders Club</h4>
+                    <h5 class="mentor">Mr. Sayantan Singha Roy</h5>
+                    <p class="description">Cy-coder's club aims to provide the students with a platform where they can hone their coding skills in different types of problem domains.</p>
+                </div>
+            </div>
+
+            <div class="club">
                 <div class="club-logo"><img src="clubLogo/art.jpeg"  alt="Loading..."></div>
                 <div class="club-detail">
                     <h4 class="club-name">Artsysm <span>Painting Sculpture Photography Club</span></h4>
@@ -100,24 +118,6 @@
                     <h4 class="club-name">Katha Kolaaj<span>Recitation Club</span></h4>
                     <h5 class="mentor">Ms. Sreeparna Roy</h5>
                     <p class="description">It provides a platform to everyone to express their vocal talents.</p>
-                </div>
-            </div>
-
-            <div class="club">
-                <div class="club-logo"><img src="clubLogo/robotics.jpeg"  alt="Loading..."></div>
-                <div class="club-detail">
-                    <h4 class="club-name">Robotics & AI Club</h4>
-                    <h5 class="mentor">Mrs. Rupanwita Das Mahapatra</h5>
-                    <p class="description">To facilate students to understand, design and learn robotics.</p>
-                </div>
-            </div>
-            
-            <div class="club">
-                <div class="club-logo"><img src="clubLogo/cycoders.png"  alt="Loading..."></div>
-                <div class="club-detail">
-                    <h4 class="club-name">The Cy-Coders Club</h4>
-                    <h5 class="mentor">Mr. Sayantan Singha Roy</h5>
-                    <p class="description">Cy-coder's club aims to provide the students with a platform where they can hone their coding skills in different types of problem domains.</p>
                 </div>
             </div>
 
@@ -275,7 +275,7 @@
         <h3>Program Feedback</h3>
         <form id="main-form">
 
-            <div class="" id="form-message" name="form-message">
+            <div class="form-message" id="form-message" name="form-message">
                 <span id="status" name="status">
                     
                 </span>
@@ -283,24 +283,40 @@
                     
                 </span>
             </div>
-
+            
             <label for="prog">Current Program</label>
-            <input type="text" name="prog" id="prog" disabled value="FORCEPS 2022">
+            <input type="text" name="prog" id="prog" disabled>
+            
+            <label for="stu-quality">Quality of information delivery</label>
+            <div id="stu-quality" class="radio">
+                <input type="radio" name="stu-quality" id="stu-quality-1" value="1" disabled>
+                <label for="stu-quality-1">1</label>
+                <input type="radio" name="stu-quality" id="stu-quality-2" value="2" disabled>
+                <label for="stu-quality-2">2</label>
+                <input type="radio" name="stu-quality" id="stu-quality-3" value="3" disabled>
+                <label for="stu-quality-3">3</label>
+                <input type="radio" name="stu-quality" id="stu-quality-4" value="4" disabled>
+                <label for="stu-quality-4">4</label>
+                <input type="radio" name="stu-quality" id="stu-quality-5" value="5" disabled checked>
+                <label for="stu-quality-5">5</label>
+            </div>
 
-            <label for="stu-name">Student Name</label>
-            <input type="text" name="stu-name" id="stu-name" disabled autocomplete="name">
-            
-            <label for="stu-email">Student Email</label>
-            <input type="email" name="stu-email" id="stu-email" disabled autocomplete="email">
-            
-            <label for="stu-exp">Your Key Learnings</label>
-            <textarea name="stu-exp" id="stu-exp" disabled autocomplete="off"></textarea>
-            
-            <label for="stu-name">Course Name</label>
-            <input type="text" name="stu-course" id="stu-course" disabled autocomplete="off">
+            <label for="stu-expect">Did the session meet your expectations</label>
+            <div id="stu-expect" class="radio">
+                <input type="radio" name="stu-expect" id="stu-expect-1" value="1" disabled>
+                <label for="stu-expect-1">1</label>
+                <input type="radio" name="stu-expect" id="stu-expect-2" value="2" disabled>
+                <label for="stu-expect-2">2</label>
+                <input type="radio" name="stu-expect" id="stu-expect-3" value="3" disabled>
+                <label for="stu-expect-3">3</label>
+                <input type="radio" name="stu-expect" id="stu-expect-4" value="4" disabled>
+                <label for="stu-expect-4">4</label>
+                <input type="radio" name="stu-expect" id="stu-expect-5" value="5" disabled checked>
+                <label for="stu-expect-5">5</label>
+            </div>
 
             <label for="stu-rating">Rate the Sesion</label>
-            <div id="stu-rating">
+            <div id="stu-rating" class="radio">
                 <input type="radio" name="stu-rate" id="stu-rate-1" value="1" disabled>
                 <label for="stu-rate-1">1</label>
                 <input type="radio" name="stu-rate" id="stu-rate-2" value="2" disabled>
@@ -321,6 +337,17 @@
     <section id="club-selection-form">
         <h3>Select Your Club</h3>
         <form id="club-form">
+
+            <div class="form-message" id="club-form-message" name="club-form-message">
+                <span class='stats' id="club-forms-tatus" name="club-form-status">
+                    
+                </span>
+                <span id="club-form-message" name="club-form-message">
+                    
+                </span>
+            </div>
+
+
             <label for="stu-name">Student Name</label>
             <input type="text" name="stu-name" id="stu-name"  autocomplete="name">
             
@@ -330,8 +357,10 @@
             <label for="stu-name">Course Name</label>
             <input type="text" name="stu-course" id="stu-course"  autocomplete="off">
 
-            <label for="club-1">1st Club (): </label>
+            <label for="club-1">1st Club (Required): </label>
             <select name="club-1" id="club-1">
+                <option value="Robotics and AI Club">Robotics and AI Club</option>
+                <option value="The Cy-Coders Club">The Cy-Coders Club</option>
                 <option value="Artsysm - Painting Sculpture Photography Club" selected>Artsysm - Painting Sculpture Photography Club</option>
                 <option value="Biotechnology Club">Biotechnology Club</option>
                 <option value="Jhankar - Dance Club">Jhankar - Dance Club</option>
@@ -340,8 +369,6 @@
                 <option value="The Crossfit - Health Club">The Crossfit - Health Club</option>
                 <option value="Musicorum - Music Club">Musicorum - Music Club</option>
                 <option value="Katha Kolaaj - Recitation Club">Katha Kolaaj - Recitation Club</option>
-                <option value="Robotics and AI Club">Robotics and AI Club</option>
-                <option value="The Cy-Coders Club">The Cy-Coders Club</option>
                 <option value="Enterpreneurship Club">Enterpreneurship Club</option>
                 <option value="Empathy - The Social Work Club">Empathy - The Social Work Club</option>
                 <option value="Litwiz - The Book Club">Litwiz - The Book Club</option>
@@ -350,6 +377,8 @@
             <label for="club-2">2st Club (Optional): </label>
             <select name="club-2" id="club-2">
                 <option value="" selected>---</option>
+                <option value="Robotics and AI Club">Robotics and AI Club</option>
+                <option value="The Cy-Coders Club">The Cy-Coders Club</option>
                 <option value="Artsysm - Painting Sculpture Photography Club">Artsysm - Painting Sculpture Photography Club</option>
                 <option value="Biotechnology Club">Biotechnology Club</option>
                 <option value="Jhankar - Dance Club">Jhankar - Dance Club</option>
@@ -358,8 +387,6 @@
                 <option value="The Crossfit - Health Club">The Crossfit - Health Club</option>
                 <option value="Musicorum - Music Club">Musicorum - Music Club</option>
                 <option value="Katha Kolaaj - Recitation Club">Katha Kolaaj - Recitation Club</option>
-                <option value="Robotics and AI Club">Robotics and AI Club</option>
-                <option value="The Cy-Coders Club">The Cy-Coders Club</option>
                 <option value="Enterpreneurship Club">Enterpreneurship Club</option>
                 <option value="Empathy - The Social Work Club">Empathy - The Social Work Club</option>
                 <option value="Litwiz - The Book Club">Litwiz - The Book Club</option>
