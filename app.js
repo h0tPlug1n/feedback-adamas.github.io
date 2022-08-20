@@ -47,14 +47,13 @@ function submitFeedbackForm() {
         course: studentCourse.value,
         rating: studentProgRating.value,
     })
-    .then(() => {console.log("success")})
-    .catch(e => {console.error(e)});
+    .then(() => {console.log("success");displayFormSuccess();})
+    .catch(e => {console.error(e);displayFormFailed();});
 }
 
 feedbackForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    // submitFeedbackForm();
-    displayFormSuccess();
+    submitFeedbackForm();
 });
 
 const feedbackFormMsg = document.getElementById("form-message")
