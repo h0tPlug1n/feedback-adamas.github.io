@@ -1,317 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+const programsButton = document.getElementById("btn-programs");
+const clubsButton = document.getElementById("btn-clubs");
+const auMapButton = document.getElementById("btn-au-map");
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+const programSection = document.getElementById("schedule-details");
+const feedbackForm = document.getElementById("feedback-details");
 
-textarea {
-  resize: none;
-}
+const clubsSection = document.getElementById("club-details");
+const clubFrom = document.getElementById("club-selection-form");
 
-.d-none {
-  display: none;
-}
+const auMapSection = document.getElementById("au-map");
 
-header {
-  background-color: rgb(0, 76, 190);
-  color: white;
-  padding: 1em 4em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-header h1 {
-  font-family: "Cinzel", sans-serif;
-  font-weight: 400;
-  font-size: 3em;
-}
-header h2 {
-  font-family: "Cinzel", sans-serif;
-  font-weight: 400;
-  font-size: 1.75em;
-}
+programsButton.addEventListener('click', event => {
+    event.preventDefault();
 
-footer {
-  background-color: rgb(0, 76, 190);
-  color: white;
-  padding: 1em 4em;
-  text-align: right;
-}
+    feedbackForm.style.display = programSection.style.display ="flex";
+    clubsSection.style.display = clubFrom.style.display = "none";
+    auMapSection.style.display = "none";
+    
+    programsButton.classList.add("selected");
+    clubsButton.classList.remove("selected");
+    auMapButton.classList.remove("selected");
+})
 
-section {
-  padding: 2em 4em;
-  display: flex;
-  flex-direction: column;
-}
-section h3 {
-  position: relative;
-  text-align: center;
-  padding: 0.5em 1em;
-}
-section h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 250px;
-  height: 1px;
-  background-color: currentColor;
-}
+clubsButton.addEventListener('click', event => {
+    event.preventDefault();
 
-.club {
-  width: 250px;
-  padding: 1em;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em;
-}
-.club .club-logo img {
-  height: 100px;
-}
-.club .club-detail {
-  text-align: center;
-}
-.club .club-detail .club-name {
-  font-family: "Cinzel", sans-serif;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-.club .club-detail .club-name span {
-  font-size: 0.8em;
-  display: block;
-}
-.club .club-detail .mentor {
-  font-weight: 400;
-}
-.club .club-detail .mentor::before {
-  content: "Faculty Co-ordinator(s)";
-  display: block;
-  font-weight: 500;
-}
-.club .club-detail .description {
-  text-align: justify;
-  font-size: 0.75em;
-  margin-top: 1em;
-}
+    feedbackForm.style.display = programSection.style.display ="none";
+    clubsSection.style.display = clubFrom.style.display = "flex"
+    auMapSection.style.display = "none";
 
-#club-details section {
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}
+    programsButton.classList.remove("selected");
+    clubsButton.classList.add("selected");
+    auMapButton.classList.remove("selected");
+})
 
-#welcome {
-  font-family: "Cinzel", sans-serif;
-}
-#welcome h3 {
-  font-size: 1.4em;
-}
-#welcome h3::after {
-  display: none;
-}
-#welcome h4 {
-  font-size: 1.2em;
-  text-align: center;
-}
-#welcome h4 span {
-  font-size: 0.8em;
-}
+auMapButton.addEventListener('click', event => {
+    event.preventDefault();
 
-#feedback-details, #club-selection-form {
-  align-items: center;
-}
-#feedback-details form, #club-selection-form form {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  width: 100%;
-  max-width: 500px;
-}
-#feedback-details form .form-message, #club-selection-form form .form-message {
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  display: none;
-}
-#feedback-details form .form-message.success, #club-selection-form form .form-message.success {
-  display: block;
-  color: rgb(0, 142, 14);
-  background-color: rgb(190, 241, 186);
-  border: 1px solid rgb(0, 142, 14);
-}
-#feedback-details form .form-message.failed, #club-selection-form form .form-message.failed {
-  display: block;
-  color: rgb(197, 0, 0);
-  background-color: rgb(255, 202, 202);
-  border: 1px solid rgb(197, 0, 0);
-}
-#feedback-details form .form-message .status, #club-selection-form form .form-message .status {
-  font-weight: 500;
-}
-#feedback-details form input, #feedback-details form textarea, #feedback-details form select, #club-selection-form form input, #club-selection-form form textarea, #club-selection-form form select {
-  border: 1px solid lightgray;
-  outline: none;
-  padding: 0.75em 1.5em;
-  min-height: 1.25em;
-  font-size: 0.8em;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-#feedback-details form input:focus, #feedback-details form textarea:focus, #feedback-details form select:focus, #club-selection-form form input:focus, #club-selection-form form textarea:focus, #club-selection-form form select:focus {
-  outline: 2px solid rgb(0, 76, 190);
-}
-#feedback-details form .radio, #club-selection-form form .radio {
-  display: flex;
-}
-#feedback-details form .radio input[type=radio], #club-selection-form form .radio input[type=radio] {
-  display: none;
-}
-#feedback-details form .radio label, #club-selection-form form .radio label {
-  cursor: pointer;
-  flex: 1;
-  text-align: center;
-  padding: 0.5em;
-  border: 1px solid lightgray;
-}
-#feedback-details form .radio input[type=radio]:checked + label, #club-selection-form form .radio input[type=radio]:checked + label {
-  background-color: rgb(0, 76, 190);
-  border: 1px solid rgb(0, 76, 190);
-  color: white;
-}
-#feedback-details form .radio input[type=radio]:disabled + label, #club-selection-form form .radio input[type=radio]:disabled + label {
-  background-color: rgb(223, 223, 223);
-  color: darkgray;
-  border: none;
-}
-#feedback-details form input[type=submit], #club-selection-form form input[type=submit] {
-  cursor: pointer;
-  margin: 1em 0;
-  border: 1px solid rgb(0, 76, 190);
-  color: rgb(0, 76, 190);
-  background-color: transparent;
-}
-#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active, #club-selection-form form input[type=submit]:hover, #club-selection-form form input[type=submit]:active {
-  background-color: rgb(0, 76, 190);
-  color: white;
-}
-#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + .radio, #feedback-details form label + select, #club-selection-form form label + input, #club-selection-form form label + textarea, #club-selection-form form label + .radio, #club-selection-form form label + select {
-  margin-bottom: 1em;
-}
+    feedbackForm.style.display = programSection.style.display ="none";
+    clubsSection.style.display = clubFrom.style.display = "none";
+    auMapSection.style.display = "flex";
 
-#selector {
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0;
-}
-#selector button {
-  width: 100px;
-  padding: 1em 0;
-  border: 1px solid rgb(0, 76, 190);
-  color: rgb(0, 76, 190);
-  background-color: transparent;
-}
-#selector button:hover, #selector button.selected {
-  cursor: pointer;
-  background-color: rgb(0, 76, 190);
-  color: white;
-}
+    programsButton.classList.remove("selected");
+    clubsButton.classList.remove("selected");
+    auMapButton.classList.add("selected");
+})
 
-#schedule-details .programs {
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#schedule-details .programs .program {
-  position: relative;
-  padding: 1em;
-  width: 275px;
-  border: 1px solid black;
-}
-#schedule-details .programs .program .time {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 4px;
-  font-size: 0.8em;
-  background-color: black;
-  color: white;
-  border: 1px solid black;
-}
-#schedule-details .programs .program h4 {
-  font-weight: 500;
-  font-size: 1.1em;
-}
-#schedule-details .programs .program h5 {
-  font-weight: 400;
-  color: rgba(0, 0, 0, 0.4);
-}
-#schedule-details .programs .program a {
-  display: none;
-  color: black;
-  text-decoration: none;
-  margin-top: 0.5em;
-}
-#schedule-details .programs .program + .program {
-  margin-top: 1em;
-}
-#schedule-details .programs .program.disabled {
-  border: 1px solid rgb(205, 205, 205);
-}
-#schedule-details .programs .program.disabled .time {
-  background-color: rgb(205, 205, 205);
-  border-color: rgb(205, 205, 205);
-}
-#schedule-details .programs .program.disabled h4, #schedule-details .programs .program.disabled h5 {
-  color: rgb(205, 205, 205);
-}
-#schedule-details .programs .program.current {
-  border: 1px solid rgb(14, 191, 14);
-}
-#schedule-details .programs .program.current .time {
-  background-color: rgb(14, 191, 14);
-  border-color: rgb(14, 191, 14);
-}
-#schedule-details .programs .program.current h4 {
-  color: rgb(14, 191, 14);
-}
-#schedule-details .programs .program.current h5 {
-  color: rgba(14, 191, 14, 0.5);
-}
-#schedule-details .programs .program.current a {
-  display: block;
-}
-
-#au-map {
-  display: none;
-}
-#au-map iframe {
-  width: 100%;
-  height: 500px;
-  border: none;
-}
-
-@media only screen and (max-width: 840px) {
-  header {
-    font-size: 12px;
-    flex-direction: column;
-    padding: 1rem 0.25rem;
-  }
-  header h1 {
-    font-size: 2.2em;
-  }
-  footer {
-    padding: 1em;
-  }
-  section {
-    padding: 2em 0;
-  }
-}/*# sourceMappingURL=style.css.map */
+programsButton.classList.toggle("selected");
+clubsSection.style.display = clubFrom.style.display = "none";
