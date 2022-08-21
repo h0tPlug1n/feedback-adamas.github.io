@@ -16,10 +16,12 @@
 
     <section id="welcome">
         <h3>Welcome to FORCEPS 2022</h3>
+        <h4>23<span>rd</span> A<span>ugust</span> 2022</h4>
     </section>
 
     <section id="selector">
-        <button id="btn-programs">Programs</button>
+        <button id="btn-programs">Program Schedules</button>
+        <button id="btn-au-map">AU Map</button>
         <button id="btn-clubs">Clubs</button>
     </section>
 
@@ -158,6 +160,10 @@
             </div>
 
         </section>
+    </section>
+
+    <section id="au-map">
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AZmU1iTWjF6tkL6Jbd9kfP4dlWrvdyw&ehbc=2E312F"></iframe>
     </section>
 
     <section id="schedule-details">
@@ -367,13 +373,13 @@
 
 
             <label for="stu-name">Student Name</label>
-            <input type="text" name="stu-name" id="stu-name"  autocomplete="name">
+            <input type="text" name="stu-name" id="stu-name"  autocomplete="name" required>
             
             <label for="stu-email">Student Email</label>
-            <input type="email" name="stu-email" id="stu-email"  autocomplete="email">
+            <input type="email" name="stu-email" id="stu-email"  autocomplete="email" required>
             
             <label for="stu-name">Course Name</label>
-            <input type="text" name="stu-course" id="stu-course"  autocomplete="off">
+            <input type="text" name="stu-course" id="stu-course"  autocomplete="off" required>
 
             <label for="club-1">1st Club (Required): </label>
             <select name="club-1" id="club-1">
