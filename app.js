@@ -16,17 +16,6 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 const feedbackForm  = document.getElementById("main-form");
-const start = 1030;
-const end = 1700;
-const currTime = new Date().getHours() + String(new Date().getMinutes());
-
-if (start < currTime && currTime < end) {
-    console.log(true);
-    for (let i = 0; i < feedbackForm.elements.length; i++) {
-        if (feedbackForm.elements[i].name == 'prog') continue;
-            feedbackForm.elements[i].disabled = false;
-    }
-}
 
 const program = feedbackForm.elements['prog'];
 const studentProgQuality = feedbackForm.elements['stu-quality'];
@@ -34,7 +23,7 @@ const studentProgExpectations = feedbackForm.elements['stu-expect'];
 const studentProgRating = feedbackForm.elements['stu-rate'];
 
 function submitFeedbackForm() {
-    set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*20 + "/"), {
+    set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*10**20 + "/"), {
         submitTime: new Date().toString(),
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
@@ -75,8 +64,7 @@ const clubChoice_1 = clubForm.elements['club-1'];
 const clubChocie_2 = clubForm.elements['club-2'];
 
 function submitClubForm() {
-    set(ref(database, "forceps2022/clubSelection/"  + Math.random()*20), {
-        id: Math.random()*20,
+    set(ref(database, "forceps2022/clubSelection/"  + Math.random()*10**20), {
         name: clubStuName,
         email: clubStuEmail,
         course: clubStuCourse,
