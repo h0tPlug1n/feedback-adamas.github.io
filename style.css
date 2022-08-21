@@ -109,12 +109,21 @@ section h3::after {
   justify-content: space-evenly;
 }
 
+#welcome {
+  font-family: "Cinzel", sans-serif;
+}
 #welcome h3 {
   font-size: 1.4em;
-  font-family: "Cinzel", sans-serif;
 }
 #welcome h3::after {
   display: none;
+}
+#welcome h4 {
+  font-size: 1.2em;
+  text-align: center;
+}
+#welcome h4 span {
+  font-size: 0.8em;
 }
 
 #feedback-details, #club-selection-form {
@@ -279,6 +288,15 @@ section h3::after {
 }
 #schedule-details .programs .program.current a {
   display: block;
+}
+
+#au-map {
+  display: none;
+}
+#au-map iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
 }
 
 @media only screen and (max-width: 840px) {
