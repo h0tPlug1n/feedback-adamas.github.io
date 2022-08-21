@@ -24,7 +24,7 @@ if (start < currTime && currTime < end) {
     console.log(true);
     for (let i = 0; i < feedbackForm.elements.length; i++) {
         if (feedbackForm.elements[i].name == 'prog') continue;
-        feedbackForm.elements[i].disabled = false;
+            feedbackForm.elements[i].disabled = false;
     }
 }
 
@@ -34,8 +34,7 @@ const studentProgExpectations = feedbackForm.elements['stu-expect'];
 const studentProgRating = feedbackForm.elements['stu-rate'];
 
 function submitFeedbackForm() {
-    set(ref(database, "forceps2022/" + program.value + "/"), {
-        id: Math.random()*10**15,
+    set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*20 + "/"), {
         submitTime: new Date().toString(),
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
@@ -76,7 +75,7 @@ const clubChoice_1 = clubForm.elements['club-1'];
 const clubChocie_2 = clubForm.elements['club-2'];
 
 function submitClubForm() {
-    set(ref(database, "forceps2022/clubSelection/"), {
+    set(ref(database, "forceps2022/clubSelection/"  + Math.random()*20), {
         id: Math.random()*20,
         name: clubStuName,
         email: clubStuEmail,
