@@ -90,6 +90,11 @@ section h3::after {
   display: block;
 }
 .club .club-detail .mentor {
+  font-weight: 400;
+}
+.club .club-detail .mentor::before {
+  content: "Faculty Co-ordinator(s)";
+  display: block;
   font-weight: 500;
 }
 .club .club-detail .description {
