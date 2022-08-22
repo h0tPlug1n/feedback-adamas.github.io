@@ -40,13 +40,13 @@ feedbackForm.addEventListener('submit', (event) => {
 
 const feedbackFormMsg = document.getElementById("form-message")
 function displayFormSuccess() {
-    studentProgExpectations.value = '';
-    studentProgQuality.value = '';
-    studentProgRating.value = '';
+    studentProgExpectations .forEach(element => element.checked = false);
+    studentProgQuality      .forEach(element => element.checked = false);
+    studentProgRating       .forEach(element => element.checked = false);
     
     feedbackFormMsg.classList.add("success");
-    feedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Success";
-    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = "Feedback Received";
+    feedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Feedback Received: ";
+    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = String(program.value);
 }
 
 function displayFormFailed() {
