@@ -64,12 +64,12 @@ const clubChoice_1 = clubForm.elements['club-1'];
 const clubChocie_2 = clubForm.elements['club-2'];
 
 function submitClubForm() {
-    set(ref(database, "forceps2022/clubSelection/"  + Math.random()*10**20), {
-        name: clubStuName,
-        email: clubStuEmail,
-        course: clubStuCourse,
-        choice1: clubChoice_1,
-        choice2: clubChocie_2,
+    set(ref(database, "forceps2022/Club Selection/"  + Math.random()*10**20), {
+        name: clubStuName.value,
+        email: clubStuEmail.value,
+        course: clubStuCourse.value,
+        choice1: clubChoice_1.value,
+        choice2: clubChocie_2.value,
     })
     .then(() => {console.log("success"); clubFormSubmitSuccess();})
     .catch(e => {console.error(e); clubFormSubmitFailed();});
