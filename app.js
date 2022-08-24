@@ -45,8 +45,8 @@ function displayFormSuccess() {
     studentProgRating.value = '';
     
     feedbackFormMsg.classList.add("success");
-    feedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Success";
-    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = "Feedback Received";
+    feedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Feedback Received: ";
+    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = program.value;
 }
 
 function displayFormFailed() {
