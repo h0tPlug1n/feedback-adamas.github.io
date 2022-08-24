@@ -16,15 +16,16 @@
 
     <section id="welcome">
         <h3>Welcome to FORCEPS 2022</h3>
-        <h4>24<span>th</span> A<span>ugust</span> 2022<br><div>Venue</div>APJ Abdul Kalam Convention Center</h4>
+        <h4>25<span>th</span> A<span>ugust</span> 2022</h4>
     </section>
 
     <section id="selector">
         <button id="btn-programs">Program Schedules</button>
         <button id="btn-au-map">AU Map</button>
-        <button id="btn-clubs">Clubs</button>
+        <!-- <button id="btn-clubs">Clubs</button> -->
     </section>
 
+    <!--
     <section id="club-details">
         <h3>Club Details</h3>
         <section>
@@ -161,125 +162,147 @@
 
         </section>
     </section>
+    -->
 
     <section id="au-map">
         <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AZmU1iTWjF6tkL6Jbd9kfP4dlWrvdyw&ehbc=2E312F"></iframe>
     </section>
 
     <section id="schedule-details">
-        <h3>Program Schedule</h3>
+        <h3>SOET Program Schedule</h3>
         <div class="programs" id="programs">
 
             <div class="program d-none"></div>
 
-            <div class="program" hours="9" minutes="30">
+            <div class="program common" hours="9" minutes="30">
                 <div class="time">09:30</div>
-                <h4>Curtain Raiser</h4>
-                <h5>Hon'ble Chancellor and<br>Governing Body Members</h5>
-                
+                <h4>Student Welcome</h4>
+                <!-- <h5>Hon'ble Chancellor and<br>Governing Body Members</h5> -->
             </div>
 
-            <div class="program" hours="9" minutes="45">
-                <div class="time">09:45</div>
-                <h4>A Welcome Note</h4>
-                <h5>Hon'ble Vice Chancellor</h5>
+            <div class="program common" hours="10" minutes="00">
+                <div class="time">10:00</div>
+                <h4>Dean's Talk</h4>
+                <h5>Dean SOET</h5>
             </div>
 
-            <div class="program" hours="10" minutes="15">
-                <div class="time">10:15</div>
-                <h4>
-                    Know Your Deans <br>
-                    and Directors
-                </h4>
-                <h5>Dean,<br>School of Media and Communication</h5>
-            </div>
-
-            <div class="program" hours="10" minutes="30">
+            <div class="program common" hours="10" minutes="30">
                 <div class="time">10:30</div>
-                <h4>Student Life Cycle @ AU</h4>
-                <h5>
-                    Dean Academics &<br>
-                    Pro VC (Training, Placement &<br>
-                    Corporate Relations)<br>
-                    with Input from P&M,<br>
-                    Examinations Department,<br>
-                    Library, Registrar's Office etc.
-                </h5>
-                <a href="#feedback-details" >Feedback</a>
+                <h4>HOD's Talk <br>Know Your Department</h4>
+                <h5>All HODs</h5>
             </div>
 
-            <div class="program" hours="11" minutes="00">
-                <div class="time">11:00</div>
-                <h4>
-                    Skills for Future: <br>
-                    Lifelong Learning Opportunities
-                </h4>
-                <h5>Pro VC<br>(Training, Placement & Corporate Relations)</h5>
-                <a href="#feedback-details" >Feedback</a>
-            </div>
-
-            <div class="program" hours="11" minutes="30">
+            <div class="program common" hours="11" minutes="30">
                 <div class="time">11:30</div>
-                <h4>
-                    Oppurtunity <br>
-                    Landscaping
-                </h4>
-                <h5>Director, CDC and Outreach</h5>
-                <a href="#feedback-details" >Feedback</a>
+                <h4>AU Facility</h4>
+                <!-- <h5>Hon'ble Chancellor and<br>Governing Body Members</h5> -->
             </div>
 
-            <div class="program" hours="12" minutes="15">
-                <div class="time">12:15</div>
-                <h4>
-                    Job-creators' Company <br>
-                    and giving back
-                </h4>
-                <h5>Associate Director - Incubation</h5>
-                <a href="#feedback-details" >Feedback</a>
+            <div class="program common" hours="12" minutes="00">
+                <div class="time">12:00</div>
+                <h4>External Speaker</h4>
+                <!-- <h5>Hon'ble Chancellor and<br>Governing Body Members</h5> -->
             </div>
-            
 
             <!-- Break Time -->
-            <div class="program" hours="12" minutes="45">
-                <div class="time">12:45</div>
+            <div class="program common" hours="13" minutes="00">
+                <div class="time">01:00</div>
                 <h4>Break</h4>
             </div>
 
-            <div class="program" hours="13" minutes="45">
-                <div class="time">13:45</div>
-                <h4>
-                    New-Age Approach <br>
-                    to Learning
-                </h4>
-                <h5>Assistant Director,<br>P&M and Head, eLearning</h5>
-                <a href="#feedback-details" >Feedback</a>
+            <div class="program-selector">
+                <h3>Select your Section</h3>
+                <div class="buttons">
+                    <button value="A" class="selected">A</button>
+                    <button value="B" class="">B</button>
+                    <button value="C" class="">C</button>
+                    <button value="D" class="">D</button>
+                    <button value="E" class="">E</button>
+                </div>
+            </div>
+
+            <!-- Sec A -->
+            <div class="program sec-a" hours="14" minutes="00">
+                <div class="time">02:00</div>
+                <h4>Ice Breaking</h4>
             </div>
             
-
-            <div class="program" hours="14" minutes="15">
-                <div class="time">14:15</div>
-                <h4>
-                    Sports and <br>
-                    Internationalization @ AU
-                </h4>
-                <h5>Director and<br>Jt. Director, International Relations</h5>
-                <a href="#feedback-details" >Feedback</a>
+            <div class="program sec-a" hours="14" minutes="30">
+                <div class="time">02:30</div>
+                <h4>Excitement of Engineering</h4>
             </div>
             
+            <div class="program sec-a" hours="15" minutes="30">
+                <div class="time">03:30</div>
+                <h4>Mentor Mentee System</h4>
+            </div>
 
-            <div class="program" hours="14" minutes="45">
-                <div class="time">14:45</div>
-                <h4>
-                    Introduction to SFC <br>
-                    Student Wellness and <br>
-                    AU Clubs
-                </h4>
-                <h5>Assistant Dean, Student Affairs</h5>
-                <a href="#feedback-details" >Feedback</a>
+            <!-- Sec B -->
+            <div class="program sec-b" hours="14" minutes="00">
+                <div class="time">02:00</div>
+                <h4>Excitement of Engineering</h4>
             </div>
             
+            <div class="program sec-b" hours="14" minutes="30">
+                <div class="time">02:30</div>
+                <h4>Mentor Mentee System</h4>
+            </div>
+            
+            <div class="program sec-b" hours="15" minutes="30">
+                <div class="time">03:30</div>
+                <h4>Ice Breaking</h4>
+            </div>
 
-            <div class="program d-none" hours="15" minutes="30"></div>
+            <!-- Sec C -->
+            <div class="program sec-c" hours="14" minutes="30">
+                <div class="time">02:30</div>
+                <h4>Ice Breaking</h4>
+            </div>
+            
+            <div class="program sec-c" hours="15" minutes="30">
+                <div class="time">03:30</div>
+                <h4>Project / Lab Visit</h4>
+            </div>
+
+            <!-- Sec D -->
+            <div class="program sec-d" hours="14" minutes="00">
+                <div class="time">02:00</div>
+                <h4>Design Thinking &<br>Team Building</h4>
+            </div>
+            
+            <div class="program sec-d" hours="15" minutes="00">
+                <div class="time">03:00</div>
+                <h4>Canvas Session</h4>
+            </div>
+            
+            <div class="program sec-d" hours="15" minutes="30">
+                <div class="time">03:30</div>
+                <h4>Quiz</h4>
+            </div>
+
+            <!-- Sec E -->
+            <div class="program sec-e" hours="14" minutes="00">
+                <div class="time">02:00</div>
+                <h4>Canvas Session</h4>
+            </div>
+            
+            <div class="program sec-e" hours="14" minutes="30">
+                <div class="time">02:30</div>
+                <h4>Quiz</h4>
+            </div>
+            
+            <div class="program sec-e" hours="15" minutes="00">
+                <div class="time">03:00</div>
+                <h4>Design Thinking &<br>Team Building</h4>
+            </div>
+
+            <div style="display: none" class="program common" hours="15" minutes="30"></div>
+            <div style="display: none" class="program sec-a" hours="15" minutes="30"></div>
+            <div style="display: none" class="program sec-b" hours="15" minutes="30"></div>
+            <div style="display: none" class="program sec-c" hours="15" minutes="30"></div>
+            <div style="display: none" class="program sec-d" hours="15" minutes="30"></div>
+            <div style="display: none" class="program sec-e" hours="15" minutes="30"></div>
+
 
         </div>
     </section>
@@ -299,19 +322,21 @@
             
             <label for="prog">Current Program</label>
             <select name="prog" id="prog">
-                <!-- <option value="Curtain Raiser">Curtain Raiser</option> -->
-                <!-- <option value="A Welcome Note">A Welcome Note</option> -->
-                <!-- <option value="Know Your Deans & Directors">Know Your Deans & Directors</option> -->
-                <option value="Student Life Cycle">Student Life Cycle @ AU</option>
-                <option value="Skills for Future">Skills for Future : Lifelong Learning Oppurtunities</option>
-                <option value="Opurtunity Landscaping">Opurtunity Landscaping</option>
-                <option value="Job Creators Company and Giving Back">Job Creator's Company and Giving Back</option>
-                <option value="New Age Approach to Learning">New Age Approach to Learning</option>
-                <option value="Sports and Internationalization">Sports and Internationalization @ AU</option>
-                <option value="Introduction to SFC Student Wellness and AU Clubs">Introduction to SFC, Student Wellness and AU Clubs</option>
+                <option value="Student Welcome">Student Welcome</option>
+                <option value="Dean's Talk">Dean's Talk</option>
+                <option value="HOD's Talk / Know Your Department">HOD's Talk / Know Your Department</option>
+                <option value="Adamas University Facilities">Adamas University Facilities</option>
+                <option value="External Speaker">External Speaker</option>
+                <option value="Mentor Mentee System">Mentor Mentee System</option>
+                <option value="Ice Breaking">Ice Breaking</option>
+                <option value="Excitement of Engineering">Excitement of Engineering</option>
+                <option value="Project / Lab Visit">Project / Lab Visit</option>
+                <option value="Design Thinking and Team Building">Design Thinking and Team Building</option>
+                <option value="Canvas Session">Canvas Session</option>
+                <option value="Quiz">Quiz</option>
             </select>
             
-            <label for="stu-quality">Quality of information delivery (Required)</label>
+            <label for="stu-quality">Quality of information delivery</label>
             <div id="stu-quality" class="radio">
                 <input type="radio" name="stu-quality" id="stu-quality-1" value="1">
                 <label for="stu-quality-1">1</label>
@@ -321,11 +346,11 @@
                 <label for="stu-quality-3">3</label>
                 <input type="radio" name="stu-quality" id="stu-quality-4" value="4">
                 <label for="stu-quality-4">4</label>
-                <input type="radio" name="stu-quality" id="stu-quality-5" value="5" required>
+                <input type="radio" name="stu-quality" id="stu-quality-5" value="5" checked>
                 <label for="stu-quality-5">5</label>
             </div>
 
-            <label for="stu-expect">Did the session meet your expectations (Required)</label>
+            <label for="stu-expect">Did the session meet your expectations</label>
             <div id="stu-expect" class="radio">
                 <input type="radio" name="stu-expect" id="stu-expect-1" value="1">
                 <label for="stu-expect-1">1</label>
@@ -335,11 +360,11 @@
                 <label for="stu-expect-3">3</label>
                 <input type="radio" name="stu-expect" id="stu-expect-4" value="4">
                 <label for="stu-expect-4">4</label>
-                <input type="radio" name="stu-expect" id="stu-expect-5" value="5" required>
+                <input type="radio" name="stu-expect" id="stu-expect-5" value="5" checked>
                 <label for="stu-expect-5">5</label>
             </div>
 
-            <label for="stu-rating">Rate the Sesion (Required)</label>
+            <label for="stu-rating">Rate the Sesion</label>
             <div id="stu-rating" class="radio">
                 <input type="radio" name="stu-rate" id="stu-rate-1" value="1">
                 <label for="stu-rate-1">1</label>
@@ -349,7 +374,7 @@
                 <label for="stu-rate-3">3</label>
                 <input type="radio" name="stu-rate" id="stu-rate-4" value="4">
                 <label for="stu-rate-4">4</label>
-                <input type="radio" name="stu-rate" id="stu-rate-5" value="5" required>
+                <input type="radio" name="stu-rate" id="stu-rate-5" value="5" checked>
                 <label for="stu-rate-5">5</label>
             </div>
 
@@ -357,7 +382,7 @@
         </form>
     </section>
 
-
+<!-- 
     <section id="club-selection-form">
         <h3>Select Your Club</h3>
         <form id="club-form">
@@ -420,14 +445,15 @@
 
             <input type="submit" value="Submit">
         </form>
-    </section>
+    </section> -->
 
     <footer>
         &copy; Adamas University
     </footer>
 
-    <script type="module" src="app.js"></script>
+    <!-- <script type="module" src="app.js"></script> -->
     <script src="styles.js"></script>
     <script src="scheduleDisplay.js"></script>
+    <script src="programSelector.js"></script>
 </body>
 </html>
