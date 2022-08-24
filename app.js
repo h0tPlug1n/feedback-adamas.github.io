@@ -55,46 +55,46 @@ function displayFormFailed() {
     feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
 }
 
-// const clubForm = document.getElementById("club-form");
+const clubForm = document.getElementById("club-form");
 
-// const clubStuName = clubForm.elements['stu-name'];
-// const clubStuEmail = clubForm.elements['stu-email'];
-// const clubStuCourse = clubForm.elements['stu-course'];
-// const clubChoice_1 = clubForm.elements['club-1'];
-// const clubChocie_2 = clubForm.elements['club-2'];
+const clubStuName = clubForm.elements['stu-name'];
+const clubStuEmail = clubForm.elements['stu-email'];
+const clubStuCourse = clubForm.elements['stu-course'];
+const clubChoice_1 = clubForm.elements['club-1'];
+const clubChocie_2 = clubForm.elements['club-2'];
 
-// function submitClubForm() {
-//     set(ref(database, "forceps2022/clubSelection/"  + Math.random()*10**20), {
-//         name: clubStuName,
-//         email: clubStuEmail,
-//         course: clubStuCourse,
-//         choice1: clubChoice_1,
-//         choice2: clubChocie_2,
-//     })
-//     .then(() => {console.log("success"); clubFormSubmitSuccess();})
-//     .catch(e => {console.error(e); clubFormSubmitFailed();});
-// }
+function submitClubForm() {
+    set(ref(database, "forceps2022soet/clubSelection/"  + Math.random()*10**20), {
+        name: clubStuName,
+        email: clubStuEmail,
+        course: clubStuCourse,
+        choice1: clubChoice_1,
+        choice2: clubChocie_2,
+    })
+    .then(() => {console.log("success"); clubFormSubmitSuccess();})
+    .catch(e => {console.error(e); clubFormSubmitFailed();});
+}
 
-// clubForm.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     submitClubForm();
-// })
+clubForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitClubForm();
+})
 
-// const clubFormMsg = document.getElementById("club-form-message")
-// function clubFormSubmitSuccess() {
-//     clubStuName.value = '';
-//     clubStuEmail.value = '';
-//     clubStuCourse.value = '';
-//     clubChoice_1.value = '';
-//     clubChocie_2.value = '';
+const clubFormMsg = document.getElementById("club-form-message")
+function clubFormSubmitSuccess() {
+    clubStuName.value = '';
+    clubStuEmail.value = '';
+    clubStuCourse.value = '';
+    clubChoice_1.value = '';
+    clubChocie_2.value = '';
 
-//     clubFormMsg.classList.add("success");
-//     clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Success";
-//     clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Club Choice Received";
-// }
+    clubFormMsg.classList.add("success");
+    clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Success";
+    clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Club Choice Received";
+}
 
-// function clubFormSubmitFailed() {
-//     clubFormMsg.classList.add("failed");
-//     clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
-//     clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
-// }
+function clubFormSubmitFailed() {
+    clubFormMsg.classList.add("failed");
+    clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
+    clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
+}
