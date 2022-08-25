@@ -98,3 +98,43 @@ function clubFormSubmitFailed() {
     clubFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
     clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
 }
+
+const pastFeedbackForm  = document.getElementById("past-main-form");
+
+const pastProgram = pastFeedbackForm.elements['past-prog'];
+const pastStudentProgQuality = pastFeedbackForm.elements['past-stu-quality'];
+const pastStudentProgExpectations = pastFeedbackForm.elements['past-stu-expect'];
+const pastStudentProgRating = pastFeedbackForm.elements['past-stu-rate'];
+
+function pastSubmitFeedbackForm() {
+    set(ref(database, "forceps2022/" + pastProgram.value + "/" + Math.random()*10**20 + "/"), {
+        submitTime: new Date().toString(),
+        quality: pastStudentProgQuality.value,
+        epxectations: pastStudentProgExpectations.value,
+        rating: pastStudentProgRating.value,
+    })
+    .then(() => {console.log("success");pastDisplayFormSuccess();})
+    .catch(e => {console.error(e);pastDisplayFormFailed();});
+}
+
+pastFeedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    pastSubmitFeedbackForm();
+});
+
+const pastFeedbackFormMsg = document.getElementById("past-form-message")
+function pastDisplayFormSuccess() {
+    pastStudentProgExpectations.value = '';
+    pastStudentProgQuality.value = '';
+    pastStudentProgRating.value = '';
+    
+    pastFeedbackFormMsg.classList.add("success");
+    pastFeedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Feedback Received: ";
+    pastFeedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = pastProgram.value;
+}
+
+function pastDisplayFormFailed() {
+    pastFeedbackFormMsg.classList.add("failed");
+    pastFeedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
+    pastFeedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
+}

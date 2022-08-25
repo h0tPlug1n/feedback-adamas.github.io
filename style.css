@@ -54,6 +54,9 @@ section h3 {
   text-align: center;
   padding: 0.5em 1em;
 }
+section h3 span {
+  font-weight: 400;
+}
 section > h3::after {
   content: "";
   position: absolute;
@@ -126,37 +129,37 @@ section > h3::after {
   font-size: 0.8em;
 }
 
-#feedback-details, #club-selection-form {
+#feedback-details, #club-selection-form, #past-feedback-details {
   align-items: center;
 }
-#feedback-details form, #club-selection-form form {
+#feedback-details form, #club-selection-form form, #past-feedback-details form {
   display: flex;
   flex-direction: column;
   padding: 1em;
   width: 100%;
   max-width: 500px;
 }
-#feedback-details form .form-message, #club-selection-form form .form-message {
+#feedback-details form .form-message, #club-selection-form form .form-message, #past-feedback-details form .form-message {
   margin: 1em 0;
   padding: 0.5em 1em;
   display: none;
 }
-#feedback-details form .form-message.success, #club-selection-form form .form-message.success {
+#feedback-details form .form-message.success, #club-selection-form form .form-message.success, #past-feedback-details form .form-message.success {
   display: block;
   color: rgb(0, 142, 14);
   background-color: rgb(190, 241, 186);
   border: 1px solid rgb(0, 142, 14);
 }
-#feedback-details form .form-message.failed, #club-selection-form form .form-message.failed {
+#feedback-details form .form-message.failed, #club-selection-form form .form-message.failed, #past-feedback-details form .form-message.failed {
   display: block;
   color: rgb(197, 0, 0);
   background-color: rgb(255, 202, 202);
   border: 1px solid rgb(197, 0, 0);
 }
-#feedback-details form .form-message .status, #club-selection-form form .form-message .status {
+#feedback-details form .form-message .status, #club-selection-form form .form-message .status, #past-feedback-details form .form-message .status {
   font-weight: 500;
 }
-#feedback-details form input, #feedback-details form textarea, #feedback-details form select, #club-selection-form form input, #club-selection-form form textarea, #club-selection-form form select {
+#feedback-details form input, #feedback-details form textarea, #feedback-details form select, #club-selection-form form input, #club-selection-form form textarea, #club-selection-form form select, #past-feedback-details form input, #past-feedback-details form textarea, #past-feedback-details form select {
   border: 1px solid lightgray;
   outline: none;
   padding: 0.75em 1.5em;
@@ -164,44 +167,44 @@ section > h3::after {
   font-size: 0.8em;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#feedback-details form input:focus, #feedback-details form textarea:focus, #feedback-details form select:focus, #club-selection-form form input:focus, #club-selection-form form textarea:focus, #club-selection-form form select:focus {
+#feedback-details form input:focus, #feedback-details form textarea:focus, #feedback-details form select:focus, #club-selection-form form input:focus, #club-selection-form form textarea:focus, #club-selection-form form select:focus, #past-feedback-details form input:focus, #past-feedback-details form textarea:focus, #past-feedback-details form select:focus {
   outline: 2px solid rgb(0, 76, 190);
 }
-#feedback-details form .radio, #club-selection-form form .radio {
+#feedback-details form .radio, #club-selection-form form .radio, #past-feedback-details form .radio {
   display: flex;
 }
-#feedback-details form .radio input[type=radio], #club-selection-form form .radio input[type=radio] {
+#feedback-details form .radio input[type=radio], #club-selection-form form .radio input[type=radio], #past-feedback-details form .radio input[type=radio] {
   display: none;
 }
-#feedback-details form .radio label, #club-selection-form form .radio label {
+#feedback-details form .radio label, #club-selection-form form .radio label, #past-feedback-details form .radio label {
   cursor: pointer;
   flex: 1;
   text-align: center;
   padding: 0.5em;
   border: 1px solid lightgray;
 }
-#feedback-details form .radio input[type=radio]:checked + label, #club-selection-form form .radio input[type=radio]:checked + label {
+#feedback-details form .radio input[type=radio]:checked + label, #club-selection-form form .radio input[type=radio]:checked + label, #past-feedback-details form .radio input[type=radio]:checked + label {
   background-color: rgb(0, 76, 190);
   border: 1px solid rgb(0, 76, 190);
   color: white;
 }
-#feedback-details form .radio input[type=radio]:disabled + label, #club-selection-form form .radio input[type=radio]:disabled + label {
+#feedback-details form .radio input[type=radio]:disabled + label, #club-selection-form form .radio input[type=radio]:disabled + label, #past-feedback-details form .radio input[type=radio]:disabled + label {
   background-color: rgb(223, 223, 223);
   color: darkgray;
   border: none;
 }
-#feedback-details form input[type=submit], #club-selection-form form input[type=submit] {
+#feedback-details form input[type=submit], #club-selection-form form input[type=submit], #past-feedback-details form input[type=submit] {
   cursor: pointer;
   margin: 1em 0;
   border: 1px solid rgb(0, 76, 190);
   color: rgb(0, 76, 190);
   background-color: transparent;
 }
-#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active, #club-selection-form form input[type=submit]:hover, #club-selection-form form input[type=submit]:active {
+#feedback-details form input[type=submit]:hover, #feedback-details form input[type=submit]:active, #club-selection-form form input[type=submit]:hover, #club-selection-form form input[type=submit]:active, #past-feedback-details form input[type=submit]:hover, #past-feedback-details form input[type=submit]:active {
   background-color: rgb(0, 76, 190);
   color: white;
 }
-#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + .radio, #feedback-details form label + select, #club-selection-form form label + input, #club-selection-form form label + textarea, #club-selection-form form label + .radio, #club-selection-form form label + select {
+#feedback-details form label + input, #feedback-details form label + textarea, #feedback-details form label + .radio, #feedback-details form label + select, #club-selection-form form label + input, #club-selection-form form label + textarea, #club-selection-form form label + .radio, #club-selection-form form label + select, #past-feedback-details form label + input, #past-feedback-details form label + textarea, #past-feedback-details form label + .radio, #past-feedback-details form label + select {
   margin-bottom: 1em;
 }
 
@@ -222,6 +225,46 @@ section > h3::after {
   cursor: pointer;
   background-color: rgb(0, 76, 190);
   color: white;
+}
+
+#past-schedule-details .programs {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#past-schedule-details .program {
+  position: relative;
+  padding: 1em;
+  width: 275px;
+  border: 1px solid rgb(205, 205, 205);
+}
+#past-schedule-details .program .time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px;
+  font-size: 0.8em;
+  background-color: rgb(205, 205, 205);
+  color: white;
+  border: 1px solid rgb(205, 205, 205);
+}
+#past-schedule-details .program h4 {
+  font-weight: 500;
+  font-size: 1.1em;
+  color: rgb(205, 205, 205);
+}
+#past-schedule-details .program h5 {
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.4);
+}
+#past-schedule-details .program a {
+  color: black;
+  text-decoration: none;
+  margin-top: 0.5em;
+}
+#past-schedule-details .program + .program {
+  margin-top: 1em;
 }
 
 #schedule-details .programs {

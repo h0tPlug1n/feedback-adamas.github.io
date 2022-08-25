@@ -22,6 +22,7 @@
 
     <section id="selector">
         <button id="btn-programs">Program Schedules</button>
+        <button id="btn-past-programs">Past Program Schedule</button>
         <button id="btn-au-map">AU Map</button>
         <button id="btn-clubs">Clubs</button>
     </section>
@@ -291,7 +292,7 @@
                 <h4>Ice Breaking Session</h4>
                 <h5>Mr. Subhankar Santra</h5>
             </div>
-                    
+
             <div class="venue sec-c">
                 3102 / 3103
             </div>
@@ -357,6 +358,196 @@
         </div>
     </section>
 
+    <section id="past-schedule-details">
+        <h3>Program Schedule<br><span>23/08/2022 & 24/08/2022</span></h3>
+        <div class="programs" id="programs">
+
+            <div class="program d-none"></div>
+
+            <div class="program" hours="9" minutes="30">
+                <div class="time">09:30</div>
+                <h4>Curtain Raiser</h4>
+                <h5>Hon'ble Chancellor and<br>Governing Body Members</h5>
+                
+            </div>
+
+            <div class="program" hours="9" minutes="45">
+                <div class="time">09:45</div>
+                <h4>A Welcome Note</h4>
+                <h5>Hon'ble Vice Chancellor</h5>
+            </div>
+
+            <div class="program" hours="10" minutes="15">
+                <div class="time">10:15</div>
+                <h4>
+                    Know Your Deans <br>
+                    and Directors
+                </h4>
+                <h5>Dean,<br>School of Media and Communication</h5>
+            </div>
+
+            <div class="program" hours="10" minutes="30">
+                <div class="time">10:30</div>
+                <h4>Student Life Cycle @ AU</h4>
+                <h5>
+                    Dean Academics &<br>
+                    Pro VC (Training, Placement &<br>
+                    Corporate Relations)<br>
+                    with Input from P&M,<br>
+                    Examinations Department,<br>
+                    Library, Registrar's Office etc.
+                </h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+
+            <div class="program" hours="11" minutes="00">
+                <div class="time">11:00</div>
+                <h4>
+                    Skills for Future: <br>
+                    Lifelong Learning Opportunities
+                </h4>
+                <h5>Pro VC<br>(Training, Placement & Corporate Relations)</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+
+            <div class="program" hours="11" minutes="30">
+                <div class="time">11:30</div>
+                <h4>
+                    Oppurtunity <br>
+                    Landscaping
+                </h4>
+                <h5>Director, CDC and Outreach</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+
+            <div class="program" hours="12" minutes="15">
+                <div class="time">12:15</div>
+                <h4>
+                    Job-creators' Company <br>
+                    and giving back
+                </h4>
+                <h5>Associate Director - Incubation</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+            
+
+            <!-- Break Time -->
+            <div class="program" hours="12" minutes="45">
+                <div class="time">12:45</div>
+                <h4>Break</h4>
+            </div>
+
+            <div class="program" hours="13" minutes="45">
+                <div class="time">13:45</div>
+                <h4>
+                    New-Age Approach <br>
+                    to Learning
+                </h4>
+                <h5>Assistant Director,<br>P&M and Head, eLearning</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+            
+
+            <div class="program" hours="14" minutes="15">
+                <div class="time">14:15</div>
+                <h4>
+                    Sports and <br>
+                    Internationalization @ AU
+                </h4>
+                <h5>Director and<br>Jt. Director, International Relations</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+            
+
+            <div class="program" hours="14" minutes="45">
+                <div class="time">14:45</div>
+                <h4>
+                    Introduction to SFC <br>
+                    Student Wellness and <br>
+                    AU Clubs
+                </h4>
+                <h5>Assistant Dean, Student Affairs</h5>
+                <a href="#feedback-details" >Feedback</a>
+            </div>
+            
+
+            <div class="program d-none" hours="15" minutes="30"></div>
+
+        </div>
+    </section>
+
+
+
+    <section id="past-feedback-details">
+        <h3>Past Program Feedback</h3>
+        <form id="past-main-form">
+
+            <div class="form-message" id="past-form-message" name="form-message">
+                <span id="past-status" name="status">
+                    
+                </span>
+                <span id="past-message" name="message">
+                    
+                </span>
+            </div>
+            
+            <label for="past-prog">Select Program</label>
+            <select name="past-prog" id="past-prog">
+                <option value="Student Life Cycle">Student Life Cycle @ AU</option>
+                <option value="Skills for Future">Skills for Future : Lifelong Learning Oppurtunities</option>
+                <option value="Opurtunity Landscaping">Opurtunity Landscaping</option>
+                <option value="Job Creators Company and Giving Back">Job Creator's Company and Giving Back</option>
+                <option value="New Age Approach to Learning">New Age Approach to Learning</option>
+                <option value="Sports and Internationalization">Sports and Internationalization @ AU</option>
+                <option value="Introduction to SFC Student Wellness and AU Clubs">Introduction to SFC, Student Wellness and AU Clubs</option>
+            </select>
+            
+            <label for="past-stu-quality">Quality of information delivery</label>
+            <div id="past-stu-quality" class="radio">
+                <input type="radio" name="past-stu-quality" id="past-stu-quality-1" value="1">
+                <label for="past-stu-quality-1">1</label>
+                <input type="radio" name="past-stu-quality" id="past-stu-quality-2" value="2">
+                <label for="past-stu-quality-2">2</label>
+                <input type="radio" name="past-stu-quality" id="past-stu-quality-3" value="3">
+                <label for="past-stu-quality-3">3</label>
+                <input type="radio" name="past-stu-quality" id="past-stu-quality-4" value="4">
+                <label for="past-stu-quality-4">4</label>
+                <input type="radio" name="past-stu-quality" id="past-stu-quality-5" value="5" checked>
+                <label for="past-stu-quality-5">5</label>
+            </div>
+
+            <label for="past-stu-expect">Did the session meet your expectations</label>
+            <div id="past-stu-expect" class="radio">
+                <input type="radio" name="past-stu-expect" id="past-stu-expect-1" value="1">
+                <label for="past-stu-expect-1">1</label>
+                <input type="radio" name="past-stu-expect" id="past-stu-expect-2" value="2">
+                <label for="past-stu-expect-2">2</label>
+                <input type="radio" name="past-stu-expect" id="past-stu-expect-3" value="3">
+                <label for="past-stu-expect-3">3</label>
+                <input type="radio" name="past-stu-expect" id="past-stu-expect-4" value="4">
+                <label for="past-stu-expect-4">4</label>
+                <input type="radio" name="past-stu-expect" id="past-stu-expect-5" value="5" checked>
+                <label for="past-stu-expect-5">5</label>
+            </div>
+
+            <label for="past-stu-rating">Rate the Sesion</label>
+            <div id="past-stu-rating" class="radio">
+                <input type="radio" name="past-stu-rate" id="past-stu-rate-1" value="1">
+                <label for="past-stu-rate-1">1</label>
+                <input type="radio" name="past-stu-rate" id="past-stu-rate-2" value="2">
+                <label for="past-stu-rate-2">2</label>
+                <input type="radio" name="past-stu-rate" id="past-stu-rate-3" value="3">
+                <label for="past-stu-rate-3">3</label>
+                <input type="radio" name="past-stu-rate" id="past-stu-rate-4" value="4">
+                <label for="past-stu-rate-4">4</label>
+                <input type="radio" name="past-stu-rate" id="past-stu-rate-5" value="5" checked>
+                <label for="past-stu-rate-5">5</label>
+            </div>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
     <section id="feedback-details">
         <h3>Program Feedback</h3>
         <form id="main-form">
@@ -370,7 +561,7 @@
                 </span>
             </div>
             
-            <label for="prog">Current Program</label>
+            <label for="prog">Select Program</label>
             <select name="prog" id="prog">
                 <option value="Student Welcome">Student Welcome</option>
                 <option value="Dean's Talk">Dean's Talk</option>
@@ -383,7 +574,7 @@
                 <option value="Project / Lab Visit">Project / Lab Visit</option>
                 <option value="Design Thinking and Team Building">Design Thinking and Team Building</option>
                 <option value="Canvas Session">Canvas Session</option>
-                <option value="Quiz">Quiz</option>
+                <option value="Quiz">Quiz</option>         
             </select>
             
             <label for="stu-quality">Quality of information delivery</label>
