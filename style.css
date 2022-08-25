@@ -230,6 +230,40 @@ section > h3::after {
   flex-direction: column;
   align-items: center;
 }
+#schedule-details .programs .venue {
+  border: 1px solid black;
+  width: 275px;
+  padding: 0.25em;
+  text-align: center;
+  font-weight: 400;
+}
+#schedule-details .programs .venue.sec-a {
+  border: 1px solid rgba(241, 54, 54, 0.67);
+  color: rgba(241, 54, 54, 0.67);
+}
+#schedule-details .programs .venue.sec-b {
+  border: 1px solid rgba(38, 183, 38, 0.67);
+  color: rgba(38, 183, 38, 0.67);
+}
+#schedule-details .programs .venue.sec-c {
+  border: 1px solid #ecc246;
+  color: #ecc246;
+}
+#schedule-details .programs .venue.sec-d {
+  border: 1px solid rgba(40, 93, 229, 0.67);
+  color: rgba(40, 93, 229, 0.67);
+}
+#schedule-details .programs .venue.sec-e {
+  border: 1px solid #b7b7b7;
+  color: #b7b7b7;
+}
+#schedule-details .programs .venue::before {
+  content: "Room No.";
+  font-weight: 500;
+}
+#schedule-details .programs .venue + .program {
+  margin-top: 1em;
+}
 #schedule-details .programs .program-selector {
   width: 275px;
   display: flex;
@@ -240,7 +274,7 @@ section > h3::after {
 #schedule-details .programs .program-selector h3 {
   font-weight: normal;
 }
-#schedule-details .programs .program-selector + .program {
+#schedule-details .programs .program-selector + .program, #schedule-details .programs .program-selector + .venue {
   margin-top: 1em;
 }
 #schedule-details .programs .program-selector .buttons {
@@ -324,7 +358,7 @@ section > h3::after {
   text-decoration: none;
   margin-top: 0.5em;
 }
-#schedule-details .programs .program + .program {
+#schedule-details .programs .program + .program, #schedule-details .programs .program + .venue {
   margin-top: 1em;
 }
 #schedule-details .programs .program.disabled {
