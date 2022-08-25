@@ -257,6 +257,9 @@ section > h3::after {
   border: 1px solid #b7b7b7;
   color: #b7b7b7;
 }
+#schedule-details .programs .venue.note::before {
+  display: none;
+}
 #schedule-details .programs .venue::before {
   content: "Room No.";
   font-weight: 500;
