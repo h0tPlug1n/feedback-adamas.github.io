@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-app.js"
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
+import { getDatabase, set, ref, get, child } from "https://www.gstatic.com/firebasejs/9.9.2/firebase-database.js"
 
 const firebaseConfig = {
     apiKey: "AIzaSyAplxk3WBKH3_q_8vdhSKNTQ2z3QxSNhZU",
@@ -23,7 +23,7 @@ const studentProgExpectations = feedbackForm.elements['stu-expect'];
 const studentProgRating = feedbackForm.elements['stu-rate'];
 
 function submitFeedbackForm() {
-    set(ref(database, "forceps2022soet/" + program.value + "/" + Math.random()*10**20 + "/"), {
+    set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*10**20 + "/"), {
         submitTime: new Date().toString(),
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
@@ -40,13 +40,13 @@ feedbackForm.addEventListener('submit', (event) => {
 
 const feedbackFormMsg = document.getElementById("form-message")
 function displayFormSuccess() {
-    studentProgExpectations.value = '';
-    studentProgQuality.value = '';
-    studentProgRating.value = '';
+    studentProgExpectations .forEach(element => element.checked = false);
+    studentProgQuality      .forEach(element => element.checked = false);
+    studentProgRating       .forEach(element => element.checked = false);
     
     feedbackFormMsg.classList.add("success");
     feedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Feedback Received: ";
-    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = program.value;
+    feedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = String(program.value);
 }
 
 function displayFormFailed() {
@@ -64,12 +64,12 @@ const clubChoice_1 = clubForm.elements['club-1'];
 const clubChocie_2 = clubForm.elements['club-2'];
 
 function submitClubForm() {
-    set(ref(database, "forceps2022soet/clubSelection/"  + Math.random()*10**20), {
-        name: clubStuName,
-        email: clubStuEmail,
-        course: clubStuCourse,
-        choice1: clubChoice_1,
-        choice2: clubChocie_2,
+    set(ref(database, "forceps2022/Club Selection/"  + Math.random()*10**20), {
+        name: clubStuName.value,
+        email: clubStuEmail.value,
+        course: clubStuCourse.value,
+        choice1: clubChoice_1.value,
+        choice2: clubChocie_2.value,
     })
     .then(() => {console.log("success"); clubFormSubmitSuccess();})
     .catch(e => {console.error(e); clubFormSubmitFailed();});
@@ -99,44 +99,13 @@ function clubFormSubmitFailed() {
     clubFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
 }
 
-const pastFeedbackForm  = document.getElementById("past-main-form");
-
-const pastProgram = pastFeedbackForm.elements['past-prog'];
-const pastStudentProgQuality = pastFeedbackForm.elements['past-stu-quality'];
-const pastStudentProgExpectations = pastFeedbackForm.elements['past-stu-expect'];
-const pastStudentProgRating = pastFeedbackForm.elements['past-stu-rate'];
-const pastStudentComment = pastFeedbackForm.elements['past-stu-cmnt'];
-
-function pastSubmitFeedbackForm() {
-    set(ref(database, "forceps2022/" + pastProgram.value + "/" + Math.random()*10**20 + "/"), {
-        submitTime: new Date().toString(),
-        quality: pastStudentProgQuality.value,
-        epxectations: pastStudentProgExpectations.value,
-        rating: pastStudentProgRating.value,
-        comment: pastStudentComment.value
-    })
-    .then(() => {console.log("success");pastDisplayFormSuccess();})
-    .catch(e => {console.error(e);pastDisplayFormFailed();});
+function getProgramData() {
+    get(child(ref(database), "forceps2022/"))
+    .then((snapshot) => {
+        console.log(snapshot.val());
+      }).catch((error) => {
+        console.error(error);
+      });      
 }
 
-pastFeedbackForm.addEventListener('submit', (event) => {
-    event.preventDefault();
-    pastSubmitFeedbackForm();
-});
-
-const pastFeedbackFormMsg = document.getElementById("past-form-message")
-function pastDisplayFormSuccess() {
-    pastStudentProgExpectations.value = '';
-    pastStudentProgQuality.value = '';
-    pastStudentProgRating.value = '';
-    
-    pastFeedbackFormMsg.classList.add("success");
-    pastFeedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Feedback Received: ";
-    pastFeedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = pastProgram.value;
-}
-
-function pastDisplayFormFailed() {
-    pastFeedbackFormMsg.classList.add("failed");
-    pastFeedbackFormMsg.getElementsByTagName('SPAN')[0].innerText = "Failed";
-    pastFeedbackFormMsg.getElementsByTagName('SPAN')[1].innerText = "Please Try Again";
-}
+getProgramData();
