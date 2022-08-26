@@ -105,6 +105,7 @@ const pastProgram = pastFeedbackForm.elements['past-prog'];
 const pastStudentProgQuality = pastFeedbackForm.elements['past-stu-quality'];
 const pastStudentProgExpectations = pastFeedbackForm.elements['past-stu-expect'];
 const pastStudentProgRating = pastFeedbackForm.elements['past-stu-rate'];
+const pastStudentComment = pastFeedbackForm.elements['past-stu-cmnt'];
 
 function pastSubmitFeedbackForm() {
     set(ref(database, "forceps2022/" + pastProgram.value + "/" + Math.random()*10**20 + "/"), {
@@ -112,6 +113,7 @@ function pastSubmitFeedbackForm() {
         quality: pastStudentProgQuality.value,
         epxectations: pastStudentProgExpectations.value,
         rating: pastStudentProgRating.value,
+        comment: pastStudentComment.value
     })
     .then(() => {console.log("success");pastDisplayFormSuccess();})
     .catch(e => {console.error(e);pastDisplayFormFailed();});
