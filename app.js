@@ -21,6 +21,7 @@ const program = feedbackForm.elements['prog'];
 const studentProgQuality = feedbackForm.elements['stu-quality'];
 const studentProgExpectations = feedbackForm.elements['stu-expect'];
 const studentProgRating = feedbackForm.elements['stu-rate'];
+const studentComment = feedbackForm.elements['stu-cmnt'];
 
 function submitFeedbackForm() {
     set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*10**20 + "/"), {
@@ -28,6 +29,7 @@ function submitFeedbackForm() {
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
         rating: studentProgRating.value,
+        comment: studentComment.value
     })
     .then(() => {console.log("success");displayFormSuccess();})
     .catch(e => {console.error(e);displayFormFailed();});
