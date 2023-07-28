@@ -265,6 +265,7 @@ section {
             padding: 1em;
             width: 275px;
             border: 1px solid black;
+            display: none;
 
             .time {
                 position: absolute;
@@ -288,7 +289,7 @@ section {
             }
 
             a {
-                display: none;
+                display: block;
                 color: black;
                 text-decoration: none;
                 margin-top: .5em;
@@ -296,6 +297,10 @@ section {
 
             & + .program {
                 margin-top: 1em;
+            }
+
+            &.selected-section {
+                display: block;
             }
 
             &.disabled {
@@ -327,6 +332,68 @@ section {
             }
         }
     }
+}
+
+.section-selectors {
+    display: flex;
+    width: 275px;
+    flex-direction: column;
+
+    h4 {
+        margin-bottom: 0.75em;
+    }
+
+    .buttons {
+        display:  flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    $sec-a: #e92828;
+    $sec-b: #006aff;
+    $sec-c: #8000ff;
+    button {
+        padding: 0.25em 2em;
+        outline: none;
+        cursor: pointer;
+
+        &.sec-a {
+            background-color: transparentize($sec-a, $amount: 0.75);
+            border: 1px solid $sec-a;
+            color: $sec-a;
+
+            &:hover {
+                background: $sec-a;
+                color: white;
+            }
+        }
+        &.sec-b {
+            background-color: transparentize($sec-b, $amount: 0.75);
+            border: 1px solid $sec-b;
+            color: $sec-b;
+
+            &:hover {
+                background: $sec-b;
+                color: white;
+            }
+        }
+        &.sec-c {
+            background-color: transparentize($sec-c, $amount: 0.75);
+            border: 1px solid $sec-c;
+            color: $sec-c;
+
+            &:hover {
+                background: $sec-c;
+                color: white;
+            }
+        }
+    }
+}
+
+.--hidden {
+    display: none!important;
 }
 
 #au-map {
