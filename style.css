@@ -235,6 +235,7 @@ section h3::after {
   padding: 1em;
   width: 275px;
   border: 1px solid black;
+  display: none;
 }
 #schedule-details .programs .program .time {
   position: absolute;
@@ -255,13 +256,16 @@ section h3::after {
   color: rgba(0, 0, 0, 0.4);
 }
 #schedule-details .programs .program a {
-  display: none;
+  display: block;
   color: black;
   text-decoration: none;
   margin-top: 0.5em;
 }
 #schedule-details .programs .program + .program {
   margin-top: 1em;
+}
+#schedule-details .programs .program.selected-section {
+  display: block;
 }
 #schedule-details .programs .program.disabled {
   border: 1px solid rgb(205, 205, 205);
@@ -288,6 +292,58 @@ section h3::after {
 }
 #schedule-details .programs .program.current a {
   display: block;
+}
+
+.section-selectors {
+  display: flex;
+  width: 275px;
+  flex-direction: column;
+}
+.section-selectors h4 {
+  margin-bottom: 0.75em;
+}
+.section-selectors .buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.section-selectors button {
+  padding: 0.25em 2em;
+  outline: none;
+  cursor: pointer;
+}
+.section-selectors button.sec-a {
+  background-color: rgba(233, 40, 40, 0.25);
+  border: 1px solid #e92828;
+  color: #e92828;
+}
+.section-selectors button.sec-a:hover {
+  background: #e92828;
+  color: white;
+}
+.section-selectors button.sec-b {
+  background-color: rgba(0, 106, 255, 0.25);
+  border: 1px solid #006aff;
+  color: #006aff;
+}
+.section-selectors button.sec-b:hover {
+  background: #006aff;
+  color: white;
+}
+.section-selectors button.sec-c {
+  background-color: rgba(128, 0, 255, 0.25);
+  border: 1px solid #8000ff;
+  color: #8000ff;
+}
+.section-selectors button.sec-c:hover {
+  background: #8000ff;
+  color: white;
+}
+
+.--hidden {
+  display: none !important;
 }
 
 #au-map {
