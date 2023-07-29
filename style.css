@@ -309,37 +309,47 @@ section h3::after {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.section-selectors button {
-  padding: 0.25em 2em;
+
+.row {
+  display: flex;
+  margin: 0.25em 0;
+}
+.row * {
+  margin-right: 0.4em;
+  flex: 1;
+}
+.row *:last-child {
+  margin-right: 0em;
+}
+
+.schedule-selector {
   outline: none;
+  border: 1px solid black;
+  border-radius: 0;
+  padding: 0.75em 1.5em;
+  min-height: 1.25em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.8em;
+  flex: 1;
+}
+
+.schedule-selector-btn {
   cursor: pointer;
+  border: 1px solid rgb(0, 76, 190);
+  color: rgb(0, 76, 190);
+  background: transparent;
+  outline: none;
+  padding: 0.75em 1.5em;
+  min-height: 1.25em;
+  font-size: 0.8em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.section-selectors button.sec-a {
-  background-color: rgba(233, 40, 40, 0.25);
-  border: 1px solid #e92828;
-  color: #e92828;
+.schedule-selector-btn:focus {
+  outline: 2px solid rgb(0, 76, 190);
 }
-.section-selectors button.sec-a:hover {
-  background: #e92828;
+.schedule-selector-btn:hover {
   color: white;
-}
-.section-selectors button.sec-b {
-  background-color: rgba(0, 106, 255, 0.25);
-  border: 1px solid #006aff;
-  color: #006aff;
-}
-.section-selectors button.sec-b:hover {
-  background: #006aff;
-  color: white;
-}
-.section-selectors button.sec-c {
-  background-color: rgba(128, 0, 255, 0.25);
-  border: 1px solid #8000ff;
-  color: #8000ff;
-}
-.section-selectors button.sec-c:hover {
-  background: #8000ff;
-  color: white;
+  background-color: rgb(0, 76, 190);
 }
 
 .--hidden {

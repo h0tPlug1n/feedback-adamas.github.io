@@ -226,6 +226,10 @@ section {
             }
         }
 
+        // .row {
+        //     margin-bottom: 1em;
+        // }
+
         label + input, label + textarea, label + .radio, label + select {
             margin-bottom: 1em;
         }
@@ -350,45 +354,51 @@ section {
         flex-direction: row;
         flex-wrap: wrap;
     }
+}
 
-    $sec-a: #e92828;
-    $sec-b: #006aff;
-    $sec-c: #8000ff;
-    button {
-        padding: 0.25em 2em;
-        outline: none;
-        cursor: pointer;
+.row {
+    display: flex;
+    margin: 0.25em 0;
+    
+    * {
+        margin-right: .4em;
+        flex: 1;
+    }
 
-        &.sec-a {
-            background-color: transparentize($sec-a, $amount: 0.75);
-            border: 1px solid $sec-a;
-            color: $sec-a;
+    *:last-child {
+        margin-right: 0em;
+    }
+}
 
-            &:hover {
-                background: $sec-a;
-                color: white;
-            }
-        }
-        &.sec-b {
-            background-color: transparentize($sec-b, $amount: 0.75);
-            border: 1px solid $sec-b;
-            color: $sec-b;
+.schedule-selector {
+    outline: none;
+    border: 1px solid black;
+    border-radius: 0;
+    padding: 0.75em 1.5em;
+    min-height: 1.25em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.8em;
+    flex: 1;
+}
 
-            &:hover {
-                background: $sec-b;
-                color: white;
-            }
-        }
-        &.sec-c {
-            background-color: transparentize($sec-c, $amount: 0.75);
-            border: 1px solid $sec-c;
-            color: $sec-c;
+.schedule-selector-btn {
+    cursor: pointer;
+    border: 1px solid $background-color;
+    color: $background-color;
+    background: transparent;
+    outline: none;            
+    padding: .75em 1.5em;
+    min-height: 1.25em;
+    font-size: .8em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
-            &:hover {
-                background: $sec-c;
-                color: white;
-            }
-        }
+    &:focus {
+        outline: 2px solid $background-color;
+    }
+
+    &:hover {
+        color: white;
+        background-color: $background-color;
     }
 }
 
