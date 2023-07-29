@@ -22,14 +22,16 @@ const studentProgQuality = feedbackForm.elements['stu-quality'];
 const studentProgExpectations = feedbackForm.elements['stu-expect'];
 const studentProgRating = feedbackForm.elements['stu-rate'];
 const studentComment = feedbackForm.elements['stu-cmnt'];
+const studentSection = feedbackForm.elements['stu-sec'];
+const programDay = feedbackForm.elements['prog-day'];
 
 function submitFeedbackForm() {
-    set(ref(database, "forceps2022/" + program.value + "/" + Math.random()*10**20 + "/"), {
+    set(ref(database, `forceps2023/` + program.value + "/" + Math.random()*Math.random()*10**20 + "/"), {
         submitTime: new Date().toString(),
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
         rating: studentProgRating.value,
-        comment: studentComment.value
+        comment: studentComment.value,
     })
     .then(() => {console.log("success");displayFormSuccess();})
     .catch(e => {console.error(e);displayFormFailed();});
@@ -37,7 +39,17 @@ function submitFeedbackForm() {
 
 feedbackForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    submitFeedbackForm();
+    console.log({
+        submitTime: new Date().toString(),
+        quality: studentProgQuality.value,
+        epxectations: studentProgExpectations.value,
+        rating: studentProgRating.value,
+        comment: studentComment.value,
+        programDay: programDay.value,
+        section: studentSection.value,
+    });
+
+    // submitFeedbackForm();
 });
 
 const feedbackFormMsg = document.getElementById("form-message")
@@ -110,4 +122,4 @@ function getProgramData() {
       });      
 }
 
-getProgramData();
+// getProgramData();
