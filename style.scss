@@ -290,6 +290,17 @@ section {
             h5 {
                 font-weight: 400;
                 color: transparentize($color: black, $amount: .6);
+
+                a {
+                    display: inline-block;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    color: $background-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             a {
@@ -334,6 +345,35 @@ section {
                     display: block;
                 }
             }
+
+            &.notification {
+                border-color: transparent;
+                margin: 0em;
+
+                h4, h5 {
+                    text-align: center;
+                }
+
+                // & + .notification {
+                //     margin-top: 0em;
+                // }
+            }
+
+            &.room-no {
+                background-color: $background-color;
+                color: white;
+                text-align: center;
+                
+                .text {
+                    font-size: 1.2em;
+                    font-weight: 300;
+                }
+
+                h4 {
+                    font-size: 4em;
+                    margin: 0;
+                }
+            }
         }
     }
 }
@@ -342,6 +382,7 @@ section {
     display: flex;
     width: 275px;
     flex-direction: column;
+    margin-bottom: 1em;
 
     h4 {
         margin-bottom: 0.75em;

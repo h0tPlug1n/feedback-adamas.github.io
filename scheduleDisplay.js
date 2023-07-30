@@ -1,5 +1,6 @@
 // REQUIRED VARIABLES
 const programs = document.getElementById("programs");
+const notifications = programs.querySelectorAll(".notification");
 const now = new Date();
 
 const sectionSelector = document.getElementById("select-section");
@@ -18,6 +19,17 @@ function showSchedule() {
             program.classList.add("selected-section");
         } else {
             program.classList.remove("selected-section");
+        }
+    }
+    // Adding code to display "notification" correctly
+    for  (let i = 0; i < notifications.length; i++) {
+        const notification = notifications[i];
+        const notificationSection = notification.getAttribute("sec");
+    
+        if (section == notificationSection) {
+            notification.classList.add("selected-section");
+        } else {
+            notification.classList.remove("selected-section");
         }
     }
 }
