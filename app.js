@@ -26,14 +26,12 @@ const studentSection = feedbackForm.elements['stu-sec'];
 const programDay = feedbackForm.elements['prog-day'];
 
 function submitFeedbackForm() {
-    set(ref(database, `forceps2023/${programDay.value}/` + program.value + "/" + Math.random()*Math.random()*10**20 + "/"), {
+    set(ref(database, `forceps2023/` + program.value + "/" + Math.random()*Math.random()*10**20 + "/"), {
         submitTime: new Date().toString(),
         quality: studentProgQuality.value,
         epxectations: studentProgExpectations.value,
         rating: studentProgRating.value,
         comment: studentComment.value,
-        programDay: programDay.value,
-        section: studentSection.value,
     })
     .then(() => {console.log("success");displayFormSuccess();})
     .catch(e => {console.error(e);displayFormFailed();});
@@ -51,7 +49,7 @@ feedbackForm.addEventListener('submit', (event) => {
         section: studentSection.value,
     });
 
-    submitFeedbackForm();
+    // submitFeedbackForm();
 });
 
 const feedbackFormMsg = document.getElementById("form-message")

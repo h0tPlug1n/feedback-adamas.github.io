@@ -31,6 +31,8 @@ function showSchedule() {
         } else {
             notification.classList.remove("selected-section");
         }
+
+        console.log(notification);
     }
 }
 
