@@ -255,6 +255,15 @@ section h3::after {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.4);
 }
+#schedule-details .programs .program h5 a {
+  display: inline-block;
+  font-style: italic;
+  font-size: 0.9em;
+  color: rgb(0, 76, 190);
+}
+#schedule-details .programs .program h5 a:hover {
+  text-decoration: underline;
+}
 #schedule-details .programs .program a {
   display: block;
   color: black;
@@ -295,6 +304,7 @@ section h3::after {
 }
 #schedule-details .programs .program.notification {
   border-color: transparent;
+  margin: 0em;
 }
 #schedule-details .programs .program.notification h4, #schedule-details .programs .program.notification h5 {
   text-align: center;
@@ -317,6 +327,7 @@ section h3::after {
   display: flex;
   width: 275px;
   flex-direction: column;
+  margin-bottom: 1em;
 }
 .section-selectors h4 {
   margin-bottom: 0.75em;

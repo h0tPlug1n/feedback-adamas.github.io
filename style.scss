@@ -290,6 +290,17 @@ section {
             h5 {
                 font-weight: 400;
                 color: transparentize($color: black, $amount: .6);
+
+                a {
+                    display: inline-block;
+                    font-style: italic;
+                    font-size: 0.9em;
+                    color: $background-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
             }
 
             a {
@@ -337,9 +348,15 @@ section {
 
             &.notification {
                 border-color: transparent;
+                margin: 0em;
+
                 h4, h5 {
                     text-align: center;
                 }
+
+                // & + .notification {
+                //     margin-top: 0em;
+                // }
             }
 
             &.room-no {
@@ -365,6 +382,7 @@ section {
     display: flex;
     width: 275px;
     flex-direction: column;
+    margin-bottom: 1em;
 
     h4 {
         margin-bottom: 0.75em;
