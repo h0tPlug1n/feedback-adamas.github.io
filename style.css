@@ -382,10 +382,6 @@ section h3::after {
   background-color: rgb(0, 76, 190);
 }
 
-.--hidden {
-  display: none !important;
-}
-
 #au-map {
   display: none;
 }

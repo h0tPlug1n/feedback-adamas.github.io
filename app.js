@@ -80,7 +80,7 @@ const clubChoice_1 = clubForm.elements['club-1'];
 const clubChocie_2 = clubForm.elements['club-2'];
 
 function submitClubForm() {
-    set(ref(database, "forceps2022/Club Selection/"  + Math.random()*10**20), {
+    set(ref(database, "forceps2023/Club Selection/"  + Math.random()*10**20), {
         name: clubStuName.value,
         email: clubStuEmail.value,
         course: clubStuCourse.value,
